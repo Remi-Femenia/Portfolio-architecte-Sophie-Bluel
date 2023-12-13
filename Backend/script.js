@@ -1,21 +1,28 @@
 
 
-const projet = works[0];
+const project = works[0];
 
-// Création de la balise img avec récupération de l'élément
-const imageProjet = document.createElement("img");
-imageProjet.src = projet.imageURL;
+function creationFicheProjet (index) {
+    for (let numberProject = 0; numberProject < slides.lenght; numberProject++) {
 
-// Création de la balise fig avec récupération de l'élément
-const titreProjet = document.createElement("figcaption");
-titreProjet.innerText = projet.title;
+        // Création de la balise img avec récupération de l'élément
+        const imageProject = document.createElement("img");
+        imageProject.src = numberProject.imageURL;
 
-// 
-const sectionProjet = document.querySelector(".gallery");
-const ficheProjet = document.createElement("figure");
-sectionProjet.appendChild(ficheProjet);
+        // Création de la balise fig avec récupération de l'élément
+        const titleProject = document.createElement("figcaption");
+        titleProject.innerText = numberProject.title;
 
-//Rattachement des éléments image et titre à une balise figure
-ficheProjet.appendChild(imageProjet);
-ficheProjet.appendChild(titreProjet);
+        // 
+        const sectionProject = document.querySelector(".gallery");
+        const indexCardProject = document.createElement("figure");
+        sectionProject.appendChild(indexCardProject);
+
+        //Rattachement des éléments image et titre à une balise figure
+        indexCardProject.appendChild(imageProject);
+        indexCardProject.appendChild(titleProject);
+
+    }
+
+}
 
