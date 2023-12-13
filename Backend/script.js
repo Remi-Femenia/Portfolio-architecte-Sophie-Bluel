@@ -1,4 +1,4 @@
-
+fetch("http://localhost:5678/api/works");
 
 const project = works[0];
 
