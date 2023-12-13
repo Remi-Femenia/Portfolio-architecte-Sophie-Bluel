@@ -7,7 +7,7 @@ function createCardProject (index) {
 
         // Création de la balise img avec récupération de l'élément
         const imageProject = document.createElement("img");
-        imageProject.src = numberProject.imageURL;
+        imageProject.src = i.imageURL;
 
         // Création de la balise fig avec récupération de l'élément
         const titleProject = document.createElement("figcaption");
