@@ -2,8 +2,8 @@
 
 const project = works[0];
 
-function creationFicheProjet (index) {
-    for (let numberProject = 0; numberProject < slides.lenght; numberProject++) {
+function createCardProject (index) {
+    for (let i = 0; i < works.lenght; i++) {
 
         // Création de la balise img avec récupération de l'élément
         const imageProject = document.createElement("img");
@@ -15,12 +15,12 @@ function creationFicheProjet (index) {
 
         // 
         const sectionProject = document.querySelector(".gallery");
-        const indexCardProject = document.createElement("figure");
-        sectionProject.appendChild(indexCardProject);
+        const cardProject = document.createElement("figure");
+        sectionProject.appendChild(cardProject);
 
         //Rattachement des éléments image et titre à une balise figure
-        indexCardProject.appendChild(imageProject);
-        indexCardProject.appendChild(titleProject);
+        cardProject.appendChild(imageProject);
+        cardProject.appendChild(titleProject);
 
     }
 
