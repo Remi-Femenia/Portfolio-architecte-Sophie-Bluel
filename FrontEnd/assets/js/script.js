@@ -1,4 +1,5 @@
-fetch("http://localhost:5678/api/works");
+let reponse = await fetch("http://localhost:5678/api/works");
+console.log(reponse)
 
 const project = works[0];
 
