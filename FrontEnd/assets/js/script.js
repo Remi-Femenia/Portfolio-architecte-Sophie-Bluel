@@ -1,14 +1,9 @@
-fetch("http://localhost:5678/api/works")
-.then(response => response.json())
-.then(works => {
-console.log(works)
+let exemple = await fetch("http://localhost:5678/api/works");
+let works = await exemple.json();
 
 for (let i = 0; i < works.length; i++) {
     createCardProject(works[i])
 }
-
-}
-)
 
 function createCardProject (work) {
 
@@ -28,4 +23,23 @@ function createCardProject (work) {
         cardProject.appendChild(titleProject);
         sectionProject.appendChild(cardProject);
 
+}
+
+
+fetch("http://localhost:5678/api/categories")
+.then(response => response.json())
+.then(categories => {
+
+    for (let i = 0; i < categories.length; i++) {
+        createCategorieProject(categories[i])
+    }
+
+    }
+    
+)
+
+function createCategorieProject (categorie) {
+    const titleCategorie = document.createElement("li");
+    titleCategorie.innerText = categorie.name;
+    
 }
