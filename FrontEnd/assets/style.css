@@ -129,7 +129,24 @@ li:hover {
 .categories {
 	display: flex;
 	justify-content: center;
+	gap: 10px;
+	margin-bottom: 3em;
+	font-family: 'Syne';
+	color: #1D6154;
 }
+
+.categories--object {
+	border: 1px solid #1D6154;
+	border-radius: 25px;
+	padding: 0.6em 1.3em;
+	font-size: 1em;
+}
+
+.categories--object:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
 
 .gallery {
 	width: 100%;
