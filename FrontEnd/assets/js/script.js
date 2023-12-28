@@ -41,5 +41,9 @@ fetch("http://localhost:5678/api/categories")
 function createCategorieProject (categorie) {
     const titleCategorie = document.createElement("li");
     titleCategorie.innerText = categorie.name;
-    
+    titleCategorie.classList.add("categories--object");
+    const ListeTri = document.querySelector("#categories");
+
+    ListeTri.appendChild(titleCategorie);
+
 }
