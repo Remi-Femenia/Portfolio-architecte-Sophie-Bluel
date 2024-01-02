@@ -140,6 +140,7 @@ li:hover {
 	border-radius: 25px;
 	padding: 0.6em 1.3em;
 	font-size: 1em;
+	cursor: pointer;
 }
 
 .categories--object:hover {
