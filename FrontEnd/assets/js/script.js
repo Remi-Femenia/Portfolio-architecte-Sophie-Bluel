@@ -47,3 +47,8 @@ function createCategorieProject (categorie) {
     ListeTri.appendChild(titleCategorie);
 
 }
+
+function filterProject () {
+
+    
+}
