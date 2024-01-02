@@ -46,29 +46,25 @@ function createCategorieProject (categorie) {
     const ListeTri = document.querySelector("#categories");
 
     ListeTri.appendChild(titleCategorie);
+    titleCategorie.addEventListener("click", function() {
+    console.log(filterProject(categorie.name))
+
+    
+    })
+
+    // Vider la gallery
+
+    // À retravailler pour générer la nouvelle liste dans le HTML
+    for (let i = 0; i < works.length; i++) {
+        createCardProject(categorie)
+    }
 
 }
 
-function filterProject () {
-    const objectFilterBtn = document.querySelector("");
-    objectFilterBtn.addEventListener("click", function () {
-    
-    //Filtre pour les objets
-    const filteredObjects = works.filter(function (work){
-    return works.name == "Objets";
-    })
-
-    //Filtre pour les appartements
-    const filteredAppartments = works.filter(function (work){
-        return works.name == "Appartements";
-        })
-
-    //Filtre pour les hôtels et restaurants
-    const filteredHostelAndRestaurants = works.filter(function (work){
-        return works.name == "Hotels & restaurants";
-        })
-
-
+function filterProject (categorie) {
+    console.log(categorie)
+    return works.filter(function (work){
+        return work.category.name == categorie;
     })
 
 }
