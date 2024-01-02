@@ -18,6 +18,7 @@ function createCardProject (work) {
         // 
         const sectionProject = document.querySelector(".gallery");
         const cardProject = document.createElement("figure");
+
         //Rattachement des balises <img> et <figcaption> à une balise <figure>
         cardProject.appendChild(imageProject);
         cardProject.appendChild(titleProject);
@@ -49,6 +50,25 @@ function createCategorieProject (categorie) {
 }
 
 function filterProject () {
-
+    const objectFilterBtn = document.querySelector("");
+    objectFilterBtn.addEventListener("click", function () {
     
+    //Filtre pour les objets
+    const filteredObjects = works.filter(function (work){
+    return works.name == "Objets";
+    })
+
+    //Filtre pour les appartements
+    const filteredAppartments = works.filter(function (work){
+        return works.name == "Appartements";
+        })
+
+    //Filtre pour les hôtels et restaurants
+    const filteredHostelAndRestaurants = works.filter(function (work){
+        return works.name == "Hotels & restaurants";
+        })
+
+
+    })
+
 }
