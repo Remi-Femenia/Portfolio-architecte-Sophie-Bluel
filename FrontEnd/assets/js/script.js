@@ -68,3 +68,5 @@ function filterProject (categorie) {
     })
 
 }
+
+document.querySelector(".gallery").innerHTML = '';
