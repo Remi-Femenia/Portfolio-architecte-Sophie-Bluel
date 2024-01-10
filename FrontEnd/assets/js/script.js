@@ -1,9 +1,32 @@
 let exemple = await fetch("http://localhost:5678/api/works");
 let works = await exemple.json();
 
+fetch("http://localhost:5678/api/categories")
+.then(response => response.json())
+.then(categories => {
+
+    for (let i = 0; i < categories.length; i++) {
+        createCategorieProject(categories[i])
+    }
+
+}
+    
+)
+
 for (let i = 0; i < works.length; i++) {
     createCardProject(works[i])
 }
+
+const btnTous = document.querySelector("#btn-tous");
+btnTous.addEventListener("click", function (){
+    
+    for (let i = 0; i < works.length; i++) {
+        
+        createCardProject(works[i]);
+    }
+
+}
+)
 
 function createCardProject (work) {
 
@@ -26,47 +49,39 @@ function createCardProject (work) {
 
 }
 
-
-fetch("http://localhost:5678/api/categories")
-.then(response => response.json())
-.then(categories => {
-
-    for (let i = 0; i < categories.length; i++) {
-        createCategorieProject(categories[i])
-    }
-
-    }
-    
-)
+// Fonction servant à créer les boutons de filtre
 
 function createCategorieProject (categorie) {
+
+    // Création de chaque élément dans des balises li
     const titleCategorie = document.createElement("li");
     titleCategorie.innerText = categorie.name;
     titleCategorie.classList.add("categories--object");
+    
+    //
     const ListeTri = document.querySelector("#categories");
 
     ListeTri.appendChild(titleCategorie);
+    
+    // Intéraction au clic avec le bouton
     titleCategorie.addEventListener("click", function() {
-    console.log(filterProject(categorie.name))
 
+        document.querySelector(".gallery").innerHTML = "";
+        const projectsFiltered = filterProject(categorie.name);
+
+        for (let i = 0; i < projectsFiltered.length; i++) {
+            createCardProject(projectsFiltered[i])
+        }
     
     })
-
-    // Vider la gallery
-
-    // À retravailler pour générer la nouvelle liste dans le HTML
-    for (let i = 0; i < works.length; i++) {
-        createCardProject(categorie)
-    }
+ 
 
 }
 
 function filterProject (categorie) {
-    console.log(categorie)
     return works.filter(function (work){
         return work.category.name == categorie;
+
     })
 
 }
-
-document.querySelector(".gallery").innerHTML = '';
