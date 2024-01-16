@@ -31,6 +31,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+main{
+	min-height: 800px;
+}
 ol, ul {
 	list-style: none;
 }
