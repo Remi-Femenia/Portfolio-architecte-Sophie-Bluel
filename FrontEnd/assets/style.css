@@ -247,3 +247,8 @@ footer nav ul {
 #login label {
 	margin: 2em 0 1em 0;
 }
+
+.lost-password {
+	text-decoration: underline;
+	cursor: pointer;
+}
