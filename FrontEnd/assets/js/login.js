@@ -29,9 +29,9 @@ async function login (email, password) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({"email": email, "password": password}
-        )  
-});
-
-let login = await reponse.json();
+        )
+    
+        let loginResponse = await reponse.json();
+    });
 
 }
