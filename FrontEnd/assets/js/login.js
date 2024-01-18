@@ -30,8 +30,8 @@ async function login (email, password) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({"email": email, "password": password}
         )
-    
         let loginResponse = await reponse.json();
+
     });
 
 }
