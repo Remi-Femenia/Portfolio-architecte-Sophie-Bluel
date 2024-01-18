@@ -21,6 +21,7 @@ form.addEventListener("submit", (event) => {
         console.log("Le mot de passe est saisi.")
     }
 
+    login(email, password) ;
 })
 
 async function login (email, password) {
