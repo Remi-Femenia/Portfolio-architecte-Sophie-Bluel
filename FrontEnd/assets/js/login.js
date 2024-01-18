@@ -1,13 +1,17 @@
 // Récupérer chaque champ et les values (.value)
-let emailInput = document.getElementById("email");
-let email = emailInput.value
-let passwordInput = document.getElementById("password");
+const form = document.querySelector('form');
 
-console.log(email);
+form.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
 
+})
 
-
+/*
 async function login (email, password) {
     let sendBtn = document.getElementById("send-button");
     sendBtn.addEventListener("click", function () {
@@ -24,3 +28,4 @@ let login = await reponse.json();
 
 }
 )}
+*/
