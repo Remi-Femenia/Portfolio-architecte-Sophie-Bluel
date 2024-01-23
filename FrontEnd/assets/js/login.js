@@ -1,13 +1,17 @@
-// Utiliser .trim() pour nettoyer
+// Utiliser .trim() pour nettoyer le champ de saisie
 
 const form = document.querySelector('form');
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
 
-
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
 
     event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    console.log(email);
+    console.log(password);
+
 
     if (email === "") {
         console.log("Le champ est vide");
@@ -24,6 +28,7 @@ form.addEventListener("submit", (event) => {
     login(email, password) ;
 })
 
+
 async function login (email, password) {
 
     const reponse = await fetch("http://localhost:5678/api/users/login", {
@@ -33,5 +38,7 @@ async function login (email, password) {
     });
 
     let loginResponse = await reponse.json();
+
+    
 
 }
