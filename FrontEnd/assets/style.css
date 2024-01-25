@@ -255,6 +255,14 @@ footer nav ul {
 	margin: 2em 0 1em 0;
 }
 
+.login-error {
+	display: block;
+	color: red;
+	padding: 2em;
+	text-align: center;
+	font-weight: 800;
+}
+
 .lost-password {
 	text-decoration: underline;
 	cursor: pointer;
