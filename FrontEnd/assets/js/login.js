@@ -46,11 +46,11 @@ async function login (email, password) {
         const loginError = document.getElementById("login-error");
         
         const loginErrorMessage = 
-                <p>
+                `<p>
                 L'e-mail et/ou le mot de passe saisis sont incorrects.
                 <br/>
                 Veuillez saisir un e-mail et un mot de passe valides.
-                </p>;
+                </p>`;
 
         loginError.innerHTML = loginErrorMessage;
         loginError.classList.add("login-error");

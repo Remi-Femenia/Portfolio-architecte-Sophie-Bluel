@@ -271,6 +271,9 @@ footer nav ul {
 /****** Fenêtre modale ******/
 
 .modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -283,8 +286,9 @@ footer nav ul {
 
 .modal-wrapper {
 	background-color: #FFF;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	border-radius: 10px;
+	max-width: 630px;
+	max-height: 688px;
+	height: 688px;
+	width: 630px;
 }
