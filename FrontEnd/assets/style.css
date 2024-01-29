@@ -285,10 +285,21 @@ footer nav ul {
 }
 
 .modal-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #FFF;
 	border-radius: 10px;
 	max-width: 630px;
 	max-height: 688px;
 	height: 688px;
 	width: 630px;
+}
+
+.modal-wrapper > h1 {
+	font-family: 'Work Sans';
+	color: #000;
+	font-size: 26px;
+	font-weight: 400;
+	padding-top: 2.5em;
 }
