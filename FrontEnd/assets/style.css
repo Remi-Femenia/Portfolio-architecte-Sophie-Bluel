@@ -277,7 +277,8 @@ footer nav ul {
 /****** Fenêtre modale ******/
 
 .modal {
-	display: flex;
+	display: none;
+	/*display: flex;*/
 	align-items: center;
 	justify-content: center;
 	position: fixed;
@@ -300,6 +301,7 @@ footer nav ul {
 	max-height: 688px;
 	height: 688px;
 	width: 630px;
+	overflow: auto;
 }
 
 .modal-wrapper > h1 {
