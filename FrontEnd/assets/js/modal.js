@@ -4,6 +4,7 @@ openModifyModal.addEventListener("click", () => {
     dialog.showModal();
 })*/
 
+/// Importation des images des travaux de l'API
 let apiWorks = await fetch("http://localhost:5678/api/works");
 let works = await apiWorks.json();
 
@@ -49,3 +50,5 @@ window.addEventListener('keydown', function (e) {
         closeModal(e);
     }
 })
+
+//// Afficher les images des travaux à supprimer
