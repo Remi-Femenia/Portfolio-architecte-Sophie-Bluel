@@ -277,7 +277,7 @@ footer nav ul {
 /****** Fenêtre modale ******/
 
 .modal {
-	display: flex;
+	display: none;
 	/*display: flex;*/
 	align-items: center;
 	justify-content: center;

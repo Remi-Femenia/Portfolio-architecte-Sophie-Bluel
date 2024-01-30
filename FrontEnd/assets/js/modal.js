@@ -10,29 +10,20 @@ let works = await apiWorks.json();
 
 let modal = null;
 
-const openModal = function (e) {
+
+const openModal = function (e, a) {
     e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute('href'));
-    target.style.display = null;
+    const target = document.querySelector(a.getAttribute('href'));
+    console.log(target);
+    console.log(e.target);
+    target.style.display = "flex";
     target.removeAttribute('aria-hidden');
-    target.setAttribute('aria-modal', 'true');
-    modal = target;
-    modal.addEventListener('click', closeModal);
-    modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
-    modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
 }
 
-const closeModal = function (e) {
-    if (modal === null) return;
+const closeModal = function (e, a) {
     e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
     target.style.display = "none";
-    target.setAttribute('aria-hidden', 'true');
-    target.removeAttribute('aria-modal');
-    modal = target;
-    modal.removeEventListener('click', closeModal);
-    modal.querySelector('.js-modal-close').removeEventListener('click', closeModal);
-    modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation);
-    modal = null;
 }
 
 const stopPropagation = function (e) {
@@ -40,9 +31,21 @@ const stopPropagation = function (e) {
 }
 
 //// Élément d'ouverture de la modale
-const linkOpenModal = document.querySelector('.js-modal')(a => {
-    a.addEventListener("click", openModal);
+document.querySelectorAll('.js-modal').forEach(a => {
+    a.addEventListener("click", e => openModal (e, a));
 });
+
+document.querySelectorAll('.js-modal-close').forEach(a => {
+    a.addEventListener("click", e => closeModal (e, a));
+});
+
+document.querySelectorAll(".modal").forEach(a => {
+    a.addEventListener("click", e => closeModal (e, a));
+})
+
+document.querySelectorAll(".js-modal-stop").forEach(a => {
+    a.addEventListener("click", stopPropagation);
+})
 
 //// Fermer la modale avec le bouton Esc
 window.addEventListener('keydown', function (e) {
