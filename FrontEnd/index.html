@@ -40,7 +40,7 @@
 	<section id="portfolio">
 		<div class="gallery-head">
 			<h2>Mes Projets</h2>
-			<a class="open-modal">
+			<a href="#modal1" class="open-modal">
 				<i class="fa-regular fa-pen-to-square editor-mode" style="color: #000000;"></i>
 				<p>modifier</p>
 			</a>
@@ -72,10 +72,14 @@
 		</form>
 	</section>
 
-	<aside id="modal" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal">
+	<aside id="modal" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" style="display: none">
 		<div class="modal-wrapper js-modal-stop">
 			<button class="js-modal-close">Fermer</button>
 			<h1 id="title-modal">Galerie photo</h1>
+			<div class="delete-gallery"></div>
+			<div class="separation-line"></div>
+			<input id="add-photo-link" type="submit" class="add-photo-link modal-btn">Ajouter une photo</input>
+
 
 		</div>
 	</aside>

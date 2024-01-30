@@ -55,5 +55,4 @@ async function login (email, password) {
         loginError.innerHTML = loginErrorMessage;
         loginError.classList.add("login-error");
     }
-
 }
