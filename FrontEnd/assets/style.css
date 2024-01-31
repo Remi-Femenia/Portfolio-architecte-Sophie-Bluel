@@ -294,9 +294,15 @@ footer nav ul {
 .modal-wrapper {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	background-color: #FFF;
 	border-radius: 10px;
+	
+}
+
+.modal-main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 40%;
 	height: 70%;
 	/*width: 630px;
@@ -320,10 +326,11 @@ footer nav ul {
 }
 
 .js-modal-close {
+	cursor: pointer;
 
 }
 
-.delete-gallery {
+.modal--delete-gallery {
 	background-color: #1D6154;
 	height: 350px;
 	width: 100%;
@@ -348,8 +355,4 @@ footer nav ul {
 	border-radius: 60px ;
 	cursor: pointer;
 	padding: 10px 49px;
-}
-
-.modal-btn-ok {
-
 }

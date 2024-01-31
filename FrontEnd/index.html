@@ -7,7 +7,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="assets/js/script.js" type="module"></script>
@@ -18,14 +20,16 @@
 	<aside id="modal1" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" href="#modal1">
 		<div class="modal-wrapper js-modal-stop">
 			<nav>
-				<i></i>
-				<i class="js-modal-close" href="#modal1">Fermer</i>
+				<i class="js-modal-close" href="#modal1">X</i>
 			</nav>
-			<h1 id="title-modal">Galerie photo</h1>
-			<div class="delete-gallery">
+			<div class="modal-main-container">
+				<h1 id="modal--title">Galerie photo</h1>
+				<div class="modal--delete-gallery">
+
+				</div>
+				<div class="separation-line"></div>
+				<button href="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn">Ajouter une photo</button>
 			</div>
-			<div class="separation-line"></div>
-			<button href="#" id="add-photo-link" type="submit" class="add-photo-link modal-btn">Ajouter une photo</button>
 		</div>
 	</aside>
 

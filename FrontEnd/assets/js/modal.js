@@ -14,8 +14,6 @@ let modal = null;
 const openModal = function (e, a) {
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
-    console.log(target);
-    console.log(e.target);
     target.style.display = "flex";
     target.removeAttribute('aria-hidden');
 }
