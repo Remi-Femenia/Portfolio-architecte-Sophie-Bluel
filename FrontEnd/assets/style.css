@@ -134,14 +134,13 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 .categories {
 	display: flex;
 	justify-content: center;
 	gap: 1em;
-	margin-bottom: 3em;
+	margin: 3em 0 3em 0;
 	font-family: 'Syne';
 	color: #1D6154;
 }
@@ -272,13 +271,20 @@ footer nav ul {
 /****** Lien vers fenêtre modale ******/
 .gallery-head {
 	display: flex;
+	justify-content: center;
+	gap: 2em;
+}
+
+.gallery-head > h2 {
+	margin: 0;
 }
 
 .open-modal-1 {
 	display: flex;
 	cursor: pointer;
 	color: #000;
-	gap: 10px;
+	gap: 0.5em;
+	align-items: center;
 }
 
 
