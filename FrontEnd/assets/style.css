@@ -158,7 +158,6 @@ li:hover {
 	color: white;
 }
 
-
 .gallery {
 	width: 100%;
 	display: grid;
@@ -267,6 +266,23 @@ footer nav ul {
 	cursor: pointer;
 }
 
+/****** Bannière mode éditeur ******/
+.editor-banner {
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	background: #000;
+	color: white;
+	padding: 1.5em 0 1.5em 0;
+}
+
+.editor-banner--icon {
+	color: white;
+}
+
+.editor-banner--text {
+	font-size: 1.1em;
+}
 
 /****** Lien vers fenêtre modale ******/
 .gallery-head {
