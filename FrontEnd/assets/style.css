@@ -269,8 +269,9 @@ footer nav ul {
 }
 
 /****** Lien vers fenêtre modale ******/
-.open-modal {
+.open-modal-1 {
 	cursor: pointer;
+	color: #000;
 }
 
 
@@ -317,17 +318,22 @@ footer nav ul {
 	padding: 60px 105px 45px 105px;
 }
 
+.js-modal-close {
+	cursor: pointer;
+	color:#000;
+}
+
+.modal1-close {
+	display: flex;
+	align-items: flex-end;
+}
+
 .modal-wrapper > h1 {
 	font-family: 'Work Sans';
 	color: #000;
 	font-size: 2em;
 	font-weight: 400;
 	padding-bottom: 1.5em;
-}
-
-.js-modal-close {
-	cursor: pointer;
-
 }
 
 .modal--delete-gallery {
