@@ -366,11 +366,38 @@ footer nav ul {
 	padding-bottom: 1.5em;
 }
 
-.modal--delete-gallery {
-	background-color: #1D6154;
-	height: 350px;
+.modal1-works-gallery {
+	display: flex;
+	gap: 0.5em;
+}
+
+.modal1-work-element {
+	position: relative;
+	box-sizing: border-box;
+	width: 7em;
+    height: 9em;
+	object-fit: cover;
+}
+
+.modal1-img-work {
+	object-fit: contain;
 	width: 100%;
-	overflow: auto;
+	height: 100%;
+	object-fit: contain;
+	z-index: 1;
+
+}
+
+.modal1-i-delete-icon {
+	background-color: black;
+	color: white;
+	padding: 0.8em 0.4em;
+	border-radius: 15%;
+	z-index: 2;
+	position: absolute;
+	display: flex;
+	right: 0.5em;
+	top: 0.5em;
 }
 
 .separation-line {
