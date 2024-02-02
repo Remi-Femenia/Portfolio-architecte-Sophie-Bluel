@@ -4,9 +4,32 @@ openModifyModal.addEventListener("click", () => {
     dialog.showModal();
 })*/
 
-/// Importation des images des travaux de l'API
+// Importation des images des travaux de l'API
 let apiWorks = await fetch("http://localhost:5678/api/works");
-let works = await apiWorks.json();
+let worksList = await apiWorks.json();
+
+////// Création des travaux dans la fenêtre modale 1 //////
+async function createModalWorks (work) {
+
+    // Images des travaux
+    const imgWorks = worksList.imageUrl;
+    const modalWorkImage = document.createElement("img");
+    modalWorkImage.src = imgWorks;
+    modalWorkImage.classList.add("modal1-img-work");
+
+    // Icône de suppression des travaux
+    const modalDeleteIcon = document.createElement("i");
+    modalDeleteIcon.classList.add("fa-solid fa-trash-can modal1-i-delete-icon");
+
+    // Gestion des conteneurs //
+    const modalWorksGalleryContainer = document.getElementById("modal1-works-gallery");
+    const modalWorkElement = document.createElement("div");
+
+    modalWorkElement.appendChild("modalWorkImage"); 
+    modalWorkElement.appendChild("modalDeleteIcon");
+
+}
+
 
 let modal = null;
 
@@ -45,11 +68,9 @@ document.querySelectorAll(".js-modal-stop").forEach(a => {
     a.addEventListener("click", stopPropagation);
 })
 
-//// Fermer la modale avec le bouton Esc
+// Fermer la modale avec le bouton Esc
 window.addEventListener('keydown', function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
         closeModal(e);
     }
 })
-
-//// Afficher les images des travaux à supprimer

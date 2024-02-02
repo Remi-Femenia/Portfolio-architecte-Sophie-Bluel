@@ -50,7 +50,6 @@ function createCardProject (work) {
 }
 
 // Fonction servant à créer les boutons de filtre
-
 function createCategorieProject (categorie) {
 
     // Création de chaque élément dans des balises li

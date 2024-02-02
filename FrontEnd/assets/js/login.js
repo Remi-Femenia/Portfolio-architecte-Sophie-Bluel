@@ -9,18 +9,6 @@ form.addEventListener("submit", async (event) => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    if (email === "") {
-        console.log("Le champ est vide");
-    } else {
-        console.log("Le champ est rempli.")
-    }
-
-    if (password === "") {
-        console.log("Insérez un mot de passe.");
-    } else {
-        console.log("Le mot de passe est saisi.")
-    }
-
     login(email, password);
 
 })
