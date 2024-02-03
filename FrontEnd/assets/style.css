@@ -398,6 +398,7 @@ footer nav ul {
 	display: flex;
 	right: 0.6em;
 	top: 0.5em;
+	cursor: pointer;
 }
 
 .separation-line {
