@@ -19,7 +19,7 @@ async function createModalWorks (work) {
 
     // Icône de suppression des travaux
     const modalDeleteIcon = document.createElement("i");
-    modalDeleteIcon.classList.add("fa-solid fa-trash-can modal1-i-delete-icon");
+    modalDeleteIcon.classList.add("fa-solid fa-trash-can modal1-delete-icon");
 
     // Gestion des conteneurs //
     const modalWorksGalleryContainer = document.getElementById("modal1-works-gallery");
