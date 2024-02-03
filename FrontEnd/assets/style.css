@@ -414,9 +414,9 @@ footer nav ul {
 	color: white;
 	background-color: #1D6154;
 	margin : 2em auto;
-	width: 237px;
 	text-align: center;
 	border-radius: 60px ;
 	cursor: pointer;
 	padding: 10px 49px;
+	border-style: none;
 }
