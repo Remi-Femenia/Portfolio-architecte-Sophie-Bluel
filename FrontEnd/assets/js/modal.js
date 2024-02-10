@@ -26,6 +26,7 @@ async function createModalWorks (work) {
     // Gestion des conteneurs //
     const modalWorksGalleryContainer = document.getElementById("modal1-works-gallery");
     const modalWorkElement = document.createElement("div");
+    modalWorkElement.classList.add("modal1-work-element")
 
     modalWorkElement.appendChild(modalWorkImage); 
     modalWorkElement.appendChild(modalDeleteIcon);
