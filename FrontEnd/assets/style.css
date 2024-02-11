@@ -344,7 +344,7 @@ footer nav ul {
 	width: 630px;
 	overflow: auto;
 	position: relative;
-	padding: 60px 105px 45px 105px;
+	margin: 60px 105px 45px 105px;
 }
 
 .js-modal-close {
@@ -369,6 +369,8 @@ footer nav ul {
 .modal1-works-gallery {
 	display: flex;
 	gap: 0.5em;
+	flex-wrap: wrap;
+	max-width: 60em;
 }
 
 .modal1-work-element {
@@ -391,7 +393,7 @@ footer nav ul {
 .modal1-delete-icon {
 	background-color: black;
 	color: white;
-	padding: 0.8em 0.4em;
+	padding: 0.4em 0.4em;
 	border-radius: 15%;
 	z-index: 2;
 	position: absolute;
