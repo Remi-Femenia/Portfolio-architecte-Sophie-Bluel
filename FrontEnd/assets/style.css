@@ -336,7 +336,7 @@ footer nav ul {
 	/*width: 630px;
 	height: 688px;*/
 	position: relative;
-	margin: 2em 7em 3em;
+	margin: 2em 8em 3em;
 }
 
 .modal1-nav {
@@ -369,7 +369,7 @@ footer nav ul {
 	gap: 0.5em;
 	row-gap: 2em;
 	flex-wrap: wrap;
-	max-width: 37em;
+	max-width: 32em;
 	max-height: 31em;
 	overflow: auto;
 }
@@ -377,8 +377,8 @@ footer nav ul {
 .modal1-work-element {
 	position: relative;
 	box-sizing: border-box;
-	width: 7em;
-    height: 9em;
+	width: 6em;
+    height: 8em;
 	object-fit: cover;
 }
 
@@ -393,7 +393,7 @@ footer nav ul {
 .modal1-delete-icon {
 	background-color: black;
 	color: white;
-	padding: 0.4em 0.4em;
+	padding: 0.8em 0.3em;
 	border-radius: 15%;
 	z-index: 2;
 	position: absolute;

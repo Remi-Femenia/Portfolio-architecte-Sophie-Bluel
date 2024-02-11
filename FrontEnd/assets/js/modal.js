@@ -21,7 +21,7 @@ async function createModalWorks (work) {
 
     // Icône de suppression des travaux
     const modalDeleteIcon = document.createElement("i");
-    modalDeleteIcon.classList.add("fa-solid", "fa-trash-can", "modal1-delete-icon");
+    modalDeleteIcon.classList.add("fa-solid", "fa-trash-can", "fa-xs", "modal1-delete-icon");
 
     // Gestion des conteneurs //
     const modalWorksGalleryContainer = document.getElementById("modal1-works-gallery");
@@ -31,7 +31,7 @@ async function createModalWorks (work) {
     modalWorkElement.appendChild(modalWorkImage); 
     modalWorkElement.appendChild(modalDeleteIcon);
     modalWorksGalleryContainer.appendChild(modalWorkElement);
-    
+
     // Grâce aux DataSet identifier les icônes correspondants aux travaux pour les supprimer
 
 }
