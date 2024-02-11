@@ -370,6 +370,7 @@ footer nav ul {
 	row-gap: 2em;
 	flex-wrap: wrap;
 	max-width: 37em;
+	max-height: 31em;
 	overflow: auto;
 }
 
