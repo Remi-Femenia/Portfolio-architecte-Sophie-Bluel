@@ -31,8 +31,7 @@ async function createModalWorks (work) {
     modalWorkElement.appendChild(modalWorkImage); 
     modalWorkElement.appendChild(modalDeleteIcon);
     modalWorksGalleryContainer.appendChild(modalWorkElement);
-
-    // Ajouter class à la div conteneur de chaque élément
+    
     // Grâce aux DataSet identifier les icônes correspondants aux travaux pour les supprimer
 
 }
