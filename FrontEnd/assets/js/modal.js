@@ -18,30 +18,31 @@ const openModal = function (e, a) {
     modal = document.querySelector(a.getAttribute('href'));
     modal.style.display = "flex";
     modal.removeAttribute('aria-hidden');
+    document.getElementById("modal1-works-gallery").innerHTML = "";
+
 
     for (let i = 0; i < worksList.length; i++) {
         
         createModalWorks(worksList[i]);
         
     }
+
+    deleteEvent();
+
 }
+
+
 
 /////Fonction de suppression des projets
 async function deleteWork (id) {
     
-    const apiWorksDelete = await fetch("http://localhost:5678/api/works/{id}", {
+    const apiWorksDelete = await fetch("http://localhost:5678/api/works/" + id, {
+        //Ajouter token
+        //Faire rechargement pour page derrière
         method: "DELETE",
-        headers: {},
-        body: JSON.stringify({"id": workId})
-        },
-    )}
-
-    for (let i = 0; i < worksList.length; i++) {
-        const deleteBtn = document.querySelector("modal1-delete-icon");
-        deleteBtn.addEventListener("click", (id) {
-            vdfgdg
-        })
-    }
+    },
+)}
+        
 
 
 ////// Création des travaux dans la fenêtre modale 1 //////
@@ -56,6 +57,7 @@ async function createModalWorks (work) {
     // Icône de suppression des travaux
     const modalDeleteIcon = document.createElement("i");
     modalDeleteIcon.classList.add("fa-solid", "fa-trash-can", "fa-xs", "modal1-delete-icon");
+    modalDeleteIcon.dataset.id = work.id;
 
     // Gestion des conteneurs //
     const modalWorksGalleryContainer = document.getElementById("modal1-works-gallery");
@@ -66,7 +68,18 @@ async function createModalWorks (work) {
     modalWorkElement.appendChild(modalDeleteIcon);
     modalWorksGalleryContainer.appendChild(modalWorkElement);
 
-    // Grâce aux DataSet identifier les icônes correspondants aux travaux pour les supprimer
+}
+
+function deleteEvent () {
+    const deleteBtn = document.querySelectorAll(".modal1-delete-icon");
+
+    for (let i = 0; i < deleteBtn.length; i++) {
+        deleteBtn[i].addEventListener("click", () => {
+        deleteWork (deleteBtn[i].dataset.id);
+         })
+
+    }
+
 }
 
 
