@@ -38,7 +38,7 @@ async function deleteWork (id) {
 
     for (let i = 0; i < worksList.length; i++) {
         const deleteBtn = document.querySelector("modal1-delete-icon");
-        deleteBtn.addEventListener("click", (id){
+        deleteBtn.addEventListener("click", (id) {
             vdfgdg
         })
     }
