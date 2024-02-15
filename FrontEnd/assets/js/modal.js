@@ -37,9 +37,11 @@ const openModal = function (e, a) {
 async function deleteWork (id) {
     
     const apiWorksDelete = await fetch("http://localhost:5678/api/works/" + id, {
+        
         //Ajouter token
         //Faire rechargement pour page derrière
         method: "DELETE",
+        body: JSON.stringify({"token": token})
     },
 )}
         
