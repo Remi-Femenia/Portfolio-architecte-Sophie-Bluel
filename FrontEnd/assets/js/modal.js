@@ -12,6 +12,10 @@ let modal = null;
 const focusableSelector = "button, a, input, textarea";
 let focusables = [];
 
+// ID de l'utilisateur
+const userId = window.localStorage.getItem("userId");
+console.log(userId);
+
 // Fonction d'ouverture de la modale 1
 const openModal = function (e, a) {
     e.preventDefault();
@@ -35,14 +39,15 @@ const openModal = function (e, a) {
 
 /////Fonction de suppression des projets
 async function deleteWork (id) {
-    
+
     const apiWorksDelete = await fetch("http://localhost:5678/api/works/" + id, {
         
-        //Ajouter token
-        //Faire rechargement pour page derrière
         method: "DELETE",
-        body: JSON.stringify({"token": token})
+        body: JSON.stringify({"userId": userId})
     },
+
+
+
 )}
         
 
@@ -73,30 +78,43 @@ async function createModalWorks (work) {
 }
 
 function deleteEvent () {
+
     const deleteBtn = document.querySelectorAll(".modal1-delete-icon");
 
     for (let i = 0; i < deleteBtn.length; i++) {
         deleteBtn[i].addEventListener("click", () => {
         deleteWork (deleteBtn[i].dataset.id);
          })
-
     }
 
+    const modalWorksGallery = document.getElementById("modal1-works-gallery");
+    modalWorksGallery.innerHTML = "";
+
+    for (let i = 0; i < worksList.length; i++) { 
+        createModalWorks(worksList[i]);
+    }
+
+    const indexPortfolioGallery = document.getElementById("")
+    indexPortfolioGallery.innerHTML = "";
+    for (let i = 0; i < worksList.length; i++) { 
+        import * {createCardProject} from "js/script.js";
+        
+    }
+}
+
+///// Ouverture de la modale 2 /////
+const openModal2 = function (e, a) {
+
 }
 
 
-
-
-const openModal2 = function (e,a) {
-
-
-}
-
+// Fermeture de la modale
 const closeModal = function (e, a) {
     e.preventDefault();
     const target = document.querySelector(a.getAttribute('href'));
     target.style.display = "none";
 }
+
 
 const stopPropagation = function (e) {
     e.stopPropagation();

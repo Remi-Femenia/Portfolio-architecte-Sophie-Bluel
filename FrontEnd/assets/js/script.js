@@ -49,6 +49,9 @@ function createCardProject (work) {
 
 }
 
+export {createCardProject};
+
+
 // Fonction servant à créer les boutons de filtre
 function createCategorieProject (categorie) {
 
