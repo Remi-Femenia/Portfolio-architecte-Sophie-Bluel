@@ -12,29 +12,30 @@ let modal = null;
 const focusableSelector = "button, a, input, textarea";
 let focusables = [];
 
+const portfolioGallery = document.querySelector(".gallery");
+
+import {createCardProject} from "./script.js";
+
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
 console.log(userId);
 
 // Fonction d'ouverture de la modale 1
 const openModal = function (e, a) {
+
     e.preventDefault();
     modal = document.querySelector(a.getAttribute('href'));
     modal.style.display = "flex";
     modal.removeAttribute('aria-hidden');
     document.getElementById("modal1-works-gallery").innerHTML = "";
 
-
     for (let i = 0; i < worksList.length; i++) {
-        
         createModalWorks(worksList[i]);
-        
     }
 
     deleteEvent();
 
 }
-
 
 
 /////Fonction de suppression des projets
@@ -45,8 +46,6 @@ async function deleteWork (id) {
         method: "DELETE",
         body: JSON.stringify({"userId": userId})
     },
-
-
 
 )}
         
@@ -94,11 +93,9 @@ function deleteEvent () {
         createModalWorks(worksList[i]);
     }
 
-    const indexPortfolioGallery = document.getElementById("")
-    indexPortfolioGallery.innerHTML = "";
-    for (let i = 0; i < worksList.length; i++) { 
-        import * {createCardProject} from "js/script.js";
-        
+    portfolioGallery.innerHTML = "";
+    for (let i = 0; i < worksList.length; i++) {      
+        createCardProject(worksList[i]);
     }
 }
 

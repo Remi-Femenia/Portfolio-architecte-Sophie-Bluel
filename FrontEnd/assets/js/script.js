@@ -49,11 +49,11 @@ function createCardProject (work) {
 
 }
 
-export {createCardProject};
+// (((((export {createCardProject};)))))
 
 
 // Fonction servant à créer les boutons de filtre
-function createCategorieProject (categorie) {
+export function createCategorieProject (categorie) {
 
     // Création de chaque élément dans des balises li
     const titleCategorie = document.createElement("li");
