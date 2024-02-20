@@ -14,6 +14,7 @@ let focusables = [];
 
 const portfolioGallery = document.querySelector(".gallery");
 
+createCategorieProject;
 
 //// PROBLÈME IMPORT
 //import {createCardProject} from "./script.js";
@@ -23,10 +24,10 @@ const userId = window.localStorage.getItem("userId");
 console.log(userId);
 
 // Fonction d'ouverture de la modale 1
-const openModal = function (e, a) {
+const openModal = function (event, element) {
 
-    e.preventDefault();
-    modal = document.querySelector(a.getAttribute('href'));
+    event.preventDefault();
+    modal = document.querySelector(element.dataset.open);
     modal.style.display = "flex";
     modal.removeAttribute('aria-hidden');
     document.getElementById("modal1-works-gallery").innerHTML = "";
@@ -120,8 +121,8 @@ const stopPropagation = function (e) {
 }
 
 //// Élément d'ouverture de la modale
-document.querySelectorAll('.js-modal').forEach(a => {
-    a.addEventListener("click", e => openModal (e, a));
+document.querySelectorAll('.js-modal').forEach(element => {
+    element.addEventListener("click", event => openModal (event, element));
 });
 
 document.querySelectorAll('.js-modal-close').forEach(a => {

@@ -17,7 +17,7 @@
 </head>
 <body>
 
-	<aside id="modal1" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" href="#modal1">
+	<aside id="modal1" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" href="#modal1" data-open="#modal1" >
 		<div class="modal-wrapper js-modal-stop">
 			<nav class="modal1-nav">
 				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" href="#modal1"></i>
@@ -27,12 +27,12 @@
 				<div class="modal1-works-gallery" id="modal1-works-gallery">
 				</div>
 				<div class="separation-line"></div>
-				<button href="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn-on">Ajouter une photo</button>
+				<button data-close="#modal1" data-open="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn-on">Ajouter une photo</button>
 			</div>
 		</div>
 	</aside>
 
-	<aside class="modal2">
+	<aside id="modal2" class="modal2" data-open="#modal2">
 		<div class="modal-wrapper">
 			<nav class="modal2-nav">
 				<i class="fa-solid fa-arrow-left fa-xl"></i>
@@ -42,17 +42,20 @@
 				<h1 id="modal-title" class="modal-title">Ajout photo</h1>
 				<div class="modal2--upload-photo-div">
 					<i class="fa-regular fa-image"></i>
-					<button id="modal2--upload-photo-btn">+ Ajouter photo</button>
+					<input type="file" id="add-photos">
+
 					<p>jpg, png: 4mo max</p>
 				</div>
-				<form method="post" id="modal2--add-photo-form">
-					<label for="title">Titre</label>
-					<input type="text" name="title" id="add-photo-form-title">
-					<select name="categories" id="add-photo-form-categories">
-						<option value="objets">Objets</option>
-						<option value="appartements">Appartements</option>
-					</select>
-				</form>
+				<div class="modal2--form-container">
+					<form method="post" id="modal2--add-photo-form">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="add-photo-form-title">
+						<select name="categories" id="add-photo-form-categories">
+							<option value="objets">Objets</option>
+							<option value="appartements">Appartements</option>
+						</select>
+					</form>
+				</div>
 				<div class="separation-line"></div>
 				<button id="modal2--btn-validation-add-photo" type="button" display="" >Valider</button>
 			</div>

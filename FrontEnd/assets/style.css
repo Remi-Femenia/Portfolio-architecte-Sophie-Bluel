@@ -449,7 +449,7 @@ footer nav ul {
 	padding: 2em;
 }
 
-.modal2--add-photo-form {
+.modal2--form-container {
 	display: flex;
 	flex-direction: column;
 }
