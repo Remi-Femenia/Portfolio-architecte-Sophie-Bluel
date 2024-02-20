@@ -32,15 +32,29 @@
 		</div>
 	</aside>
 
-	<aside id="modal2" class="modal modal2" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" href="#modal2">
-		<div class="modal-wrapper js-modal-stop">
+	<aside class="modal2">
+		<div class="modal-wrapper">
 			<nav class="modal2-nav">
-				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" href="#modal2"></i>
+				<i class="fa-solid fa-arrow-left fa-xl"></i>
+				<i class="fa-solid fa-xmark fa-xl"></i>
 			</nav>
-			<div class="modal-main-container">
-				<h1 id="modal-title" class="modal-title">Galerie photo</h1>
-
-				
+			<div class="modal-main_container">
+				<h1 id="modal-title" class="modal-title">Ajout photo</h1>
+				<div class="modal2--upload-photo-div">
+					<i class="fa-regular fa-image"></i>
+					<button id="modal2--upload-photo-btn">+ Ajouter photo</button>
+					<p>jpg, png: 4mo max</p>
+				</div>
+				<form method="post" id="modal2--add-photo-form">
+					<label for="title">Titre</label>
+					<input type="text" name="title" id="add-photo-form-title">
+					<select name="categories" id="add-photo-form-categories">
+						<option value="objets">Objets</option>
+						<option value="appartements">Appartements</option>
+					</select>
+				</form>
+				<div class="separation-line"></div>
+				<button id="modal2--btn-validation-add-photo" type="button" display="" >Valider</button>
 			</div>
 		</div>
 	</aside>

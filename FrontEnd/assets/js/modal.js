@@ -14,7 +14,9 @@ let focusables = [];
 
 const portfolioGallery = document.querySelector(".gallery");
 
-import {createCardProject} from "./script.js";
+
+//// PROBLÈME IMPORT
+//import {createCardProject} from "./script.js";
 
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
@@ -51,7 +53,7 @@ async function deleteWork (id) {
         
 
 
-////// Création des travaux dans la fenêtre modale 1 //////
+////// Création des images des travaux dans la fenêtre modale 1 //////
 async function createModalWorks (work) {
 
     // Images des travaux
