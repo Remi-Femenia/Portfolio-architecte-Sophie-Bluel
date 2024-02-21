@@ -20,8 +20,8 @@ for (let i = 0; i < works.length; i++) {
 const btnTous = document.querySelector("#btn-tous");
 btnTous.addEventListener("click", function (){
     
+    
     for (let i = 0; i < works.length; i++) {
-        
         createCardProject(works[i]);
     }
 

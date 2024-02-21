@@ -16,9 +16,6 @@ const portfolioGallery = document.querySelector(".gallery");
 
 createCategorieProject;
 
-//// PROBLÈME IMPORT
-//import {createCardProject} from "./script.js";
-
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
 console.log(userId);
@@ -96,6 +93,7 @@ function deleteEvent () {
         createModalWorks(worksList[i]);
     }
 
+    // Rechargement de la gallery du portfolio
     portfolioGallery.innerHTML = "";
     for (let i = 0; i < worksList.length; i++) {      
         createCardProject(worksList[i]);
