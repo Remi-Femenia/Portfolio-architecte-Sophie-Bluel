@@ -47,15 +47,17 @@
 					<p>jpg, png: 4mo max</p>
 				</div>
 				<div class="modal2--form-container">
-					<form method="post" id="modal2--add-photo-form">
-						<label for="title">Titre</label>
+					<div class="modal2--title-section">
+						<label class="modal2--title-label" for="title">Titre</label>
 						<input type="text" name="title" id="add-photo-form-title">
+					</div>
+					<div class="modal2--categories-section"></div>
+						<label class="modal2--categories-label" for="categories">Catégories</label>
 						<select name="categories" id="add-photo-form-categories">
 							<option value="objets">Objets</option>
 							<option value="appartements">Appartements</option>
 						</select>
-					</form>
-				</div>
+					</div>
 				<div class="separation-line"></div>
 				<button id="modal2--btn-validation-add-photo" type="button" display="" >Valider</button>
 			</div>
