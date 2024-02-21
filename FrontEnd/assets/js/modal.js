@@ -1,9 +1,3 @@
-/*let openModifyModal = document.getElementById("modify-btn");
-
-openModifyModal.addEventListener("click", () => {
-    dialog.showModal();
-})*/
-
 // Importation des images des travaux de l'API
 let apiWorks = await fetch("http://localhost:5678/api/works");
 let worksList = await apiWorks.json();
@@ -12,9 +6,6 @@ let modal = null;
 const focusableSelector = "button, a, input, textarea";
 let focusables = [];
 
-const portfolioGallery = document.querySelector(".gallery");
-
-createCategorieProject;
 
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");

@@ -4,14 +4,12 @@ let works = await exemple.json();
 fetch("http://localhost:5678/api/categories")
 .then(response => response.json())
 .then(categories => {
-
     for (let i = 0; i < categories.length; i++) {
         createCategorieProject(categories[i])
     }
+})
 
-}
-    
-)
+const portfolioGallery = document.querySelector(".gallery");
 
 for (let i = 0; i < works.length; i++) {
     createCardProject(works[i])
@@ -20,14 +18,14 @@ for (let i = 0; i < works.length; i++) {
 const btnTous = document.querySelector("#btn-tous");
 btnTous.addEventListener("click", function (){
     
-    
+    portfolioGallery.innerHTML = "";
     for (let i = 0; i < works.length; i++) {
         createCardProject(works[i]);
     }
 
-}
-)
+})
 
+// Fonction de création des éléments dans la galerie portfolio
 function createCardProject (work) {
 
         // Création de la balise <img> avec récupération de l'élément
@@ -38,24 +36,20 @@ function createCardProject (work) {
         const titleProject = document.createElement("figcaption");
         titleProject.innerText = work.title;
 
-        // 
-        const sectionProject = document.querySelector(".gallery");
+        // Éléments de la galerie
         const cardProject = document.createElement("figure");
 
         //Rattachement des balises <img> et <figcaption> à une balise <figure>
         cardProject.appendChild(imageProject);
         cardProject.appendChild(titleProject);
-        sectionProject.appendChild(cardProject);
+        portfolioGallery.appendChild(cardProject);
 
 }
-
-// (((((export {createCardProject};)))))
-
 
 // Fonction servant à créer les boutons de filtre
 function createCategorieProject (categorie) {
 
-    // Création de chaque élément dans des balises li
+    // Création de chaque élément dans des balises <li>
     const titleCategorie = document.createElement("li");
     titleCategorie.innerText = categorie.name;
     titleCategorie.classList.add("categories--object");
@@ -68,7 +62,7 @@ function createCategorieProject (categorie) {
     // Intéraction au clic avec le bouton
     titleCategorie.addEventListener("click", function() {
 
-        document.querySelector(".gallery").innerHTML = "";
+        portfolioGallery.innerHTML = "";
         const projectsFiltered = filterProject(categorie.name);
 
         for (let i = 0; i < projectsFiltered.length; i++) {
@@ -77,10 +71,11 @@ function createCategorieProject (categorie) {
     
     })
  
-
 }
 
+/// Fonction de récupération des catégories pour les filtres
 function filterProject (categorie) {
+
     return works.filter(function (work){
         return work.category.name == categorie;
 
