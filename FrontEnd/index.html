@@ -13,30 +13,29 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="assets/js/script.js" type="module"></script>
-	<script src="assets/js/modal.js" type="module"></script>
 </head>
 <body>
 
-	<aside id="modal1" class="modal" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal" href="#modal1" data-open="#modal1" >
+	<aside id="modal1" class="modal1 modal" data-open="#modal1" href="#modal1" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal">
 		<div class="modal-wrapper js-modal-stop">
-			<nav class="modal1-nav">
-				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" href="#modal1"></i>
+			<nav class="modal-nav modal1-nav">
+				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" data-close="#modal1"></i>
 			</nav>
 			<div class="modal-main-container">
 				<h1 id="modal-title" class="modal-title">Galerie photo</h1>
 				<div class="modal1-works-gallery" id="modal1-works-gallery">
 				</div>
 				<div class="separation-line"></div>
-				<button data-close="#modal1" data-open="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn-on">Ajouter une photo</button>
+				<button data-close="#modal1" data-open="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn-on js-modal-close js-modal">Ajouter une photo</button>
 			</div>
 		</div>
 	</aside>
 
-	<aside id="modal2" class="modal2" data-open="#modal2">
-		<div class="modal-wrapper">
+	<aside id="modal2" class="modal2 modal" data-open="#modal2">
+		<div class="modal-wrapper js-modal-stop">
 			<nav class="modal2-nav">
 				<i class="fa-solid fa-arrow-left fa-xl"></i>
-				<i class="fa-solid fa-xmark fa-xl"></i>
+				<i data-close="#modal2" class="fa-solid fa-xmark fa-xl js-modal-close"></i>
 			</nav>
 			<div class="modal-main_container">
 				<h1 id="modal-title" class="modal-title">Ajout photo</h1>
@@ -95,7 +94,7 @@
 	<section id="portfolio">
 		<div class="gallery-head">
 			<h2>Mes projets</h2>
-			<a href="#modal1" class="js-modal open-modal-1">
+			<a data-open="#modal1" class="js-modal open-modal-1">
 				<i class="fa-regular fa-pen-to-square "></i>
 				<p>modifier</p>
 			</a>
