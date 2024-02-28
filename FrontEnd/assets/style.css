@@ -465,6 +465,17 @@ footer nav ul {
 	color: #B9C5CC;
 }
 
+.modal2--upload-photo-btn {
+	font-family: 'Work Sans';
+	color: #000;
+	font-size: 1em;
+}
+
+.modal2--upload-conditions-txt {
+	font-size: 0.8em;
+	color: #444444;
+}
+
 .modal2--form-container {
 	display: flex;
 	flex-direction: column;
