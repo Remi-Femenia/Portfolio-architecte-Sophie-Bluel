@@ -479,6 +479,19 @@ footer nav ul {
 .modal2--form-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: 2em;
+	width: 100%;
+	margin: 2em 0;
+	gap: 1em;
+}
+
+.modal2--form-section {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal2--form-input {
+	height: 3em;
+    border: none;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	
 }
