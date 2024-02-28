@@ -95,7 +95,7 @@ let focusables = [];
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
 
-// Fonction d'ouverture de la modale 1
+// Fonction d'affichage de la modale 1 //
 const openModal = function (event, element) {
 
     event.preventDefault();
@@ -183,8 +183,21 @@ function deleteEvent () {
 ///// Ouverture de la modale 2 /////
 const openModal2 = function (event, element) {
 
-
 }
+
+/// Flèche retour de la modale 2 ///
+const arrowLeft = document.getElementById("modal2-arrow-left");
+
+arrowLeft.addEventListener("click", function (event, element){
+
+    const modal1 = document.querySelector(element.dataset.close);
+    closeModal(modal1);
+
+    const modal2 = document.querySelector(element.dataset.open);
+    openModal(modal2);
+
+    modal1.style.display = "none";
+})
 
 
 // Fermeture de la modale 1
@@ -194,6 +207,7 @@ const closeModal = function (event, element) {
     console.log(element.dataset.close);
     modal.style.display ="none";
 }
+
 
 
 const stopPropagation = function (e) {
