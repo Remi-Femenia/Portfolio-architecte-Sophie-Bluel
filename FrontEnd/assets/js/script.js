@@ -95,7 +95,7 @@ let focusables = [];
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
 
-// Fonction d'affichage de la modale 1 //
+// Fonction d'affichage des modales //
 const openModal = function (event, element) {
 
     event.preventDefault();
@@ -183,35 +183,44 @@ function deleteEvent () {
 ///// Ouverture de la modale 2 /////
 const openModal2 = function (event, element) {
 
+
 }
 
-/// Flèche retour de la modale 2 ///
+/// Fonctionnement de la flèche retour de la modale 2 ///
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
-arrowLeft.addEventListener("click", function (event, element){
+arrowLeft.addEventListener("click", (event, element) => {
+    openModal(element.dataset.open);
+    closeModal(element.dataset.close);
+})
+
+/*arrowLeft.addEventListener("click", function (event, element){
+
+    event.preventDefault();
 
     const modal1 = document.querySelector(element.dataset.close);
     closeModal(modal1);
+    console.log(element);
 
     const modal2 = document.querySelector(element.dataset.open);
     openModal(modal2);
 
     modal1.style.display = "none";
+
 })
+*/
 
 
-// Fermeture de la modale 1
+// Fermeture des modales
 const closeModal = function (event, element) {
     event.preventDefault();
     modal = document.querySelector(element.dataset.close);
-    console.log(element.dataset.close);
     modal.style.display ="none";
 }
 
 
-
-const stopPropagation = function (e) {
-    e.stopPropagation();
+const stopPropagation = function (element) {
+    element.stopPropagation();
 }
 
 //// Élément d'ouverture de la modale
