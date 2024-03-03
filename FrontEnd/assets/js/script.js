@@ -126,7 +126,6 @@ async function deleteWork (id) {
 )}
         
 
-
 ////// Création des images des travaux dans la fenêtre modale 1 //////
 async function createModalWorks (work) {
 
@@ -152,6 +151,7 @@ async function createModalWorks (work) {
 
 }
 
+// Fonction de suppression des travaux dans l'API
 function deleteEvent () {
 
     const deleteBtn = document.querySelectorAll(".modal1-delete-icon");
@@ -180,16 +180,11 @@ function deleteEvent () {
     }
 }
 
-///// Ouverture de la modale 2 /////
-const openModal2 = function (event, element) {
-
-
-}
-
 /// Fonctionnement de la flèche retour de la modale 2 ///
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
 arrowLeft.addEventListener("click", (event, element) => {
+    event.preventDefault();
     openModal(element.dataset.open);
     closeModal(element.dataset.close);
 })
