@@ -95,6 +95,12 @@ let focusables = [];
 // ID de l'utilisateur
 const userId = window.localStorage.getItem("userId");
 
+
+
+//////////////////////////////////////////////////////////////////////
+///////////////////////////// MODALES ////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
 // Fonction d'affichage des modales //
 const openModal = function (event, element) {
 
@@ -156,7 +162,7 @@ function deleteEvent () {
 
     for (let i = 0; i < deleteBtn.length; i++) {
         deleteBtn[i].addEventListener("click", () => {
-        deleteWork (deleteBtn[i].dataset.id);
+        deleteWork(deleteBtn[i].dataset.id);
          })
     }
 
