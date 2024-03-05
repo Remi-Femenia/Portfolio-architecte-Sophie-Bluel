@@ -112,20 +112,6 @@ const openModal = function (event, element) {
 
 }
 
-
-/////Fonction de suppression des projets
-async function deleteWork (id) {
-
-    const apiWorksDelete = await fetch("http://localhost:5678/api/works/" + id, {
-        
-        method: "DELETE",
-        body: JSON.stringify({"userId": userId})
-
-    },
-
-)}
-        
-
 ////// Création des images des travaux dans la fenêtre modale 1 //////
 async function createModalWorks (work) {
 
@@ -150,6 +136,18 @@ async function createModalWorks (work) {
     modalWorksGalleryContainer.appendChild(modalWorkElement);
 
 }
+
+// Fonction de suppression des projets
+async function deleteWork (id) {
+
+    const apiWorksDelete = await fetch("http://localhost:5678/api/works/" + id, {
+        
+        method: "DELETE",
+        body: JSON.stringify({"userId": userId})
+
+    },
+
+)}
 
 // Fonction de suppression des travaux dans l'API
 function deleteEvent () {
@@ -180,7 +178,8 @@ function deleteEvent () {
     }
 }
 
-/// Fonctionnement de la flèche retour de la modale 2 ///
+/////////////////////////////////////////////////////////////////////////
+/////////// Fonctionnement de la flèche retour de la modale 2 ///////////
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
 arrowLeft.addEventListener("click", (event, element) => {
@@ -213,7 +212,7 @@ const closeModal = function (event, element) {
     modal.style.display ="none";
 }
 
-
+// Stop propagation
 const stopPropagation = function (element) {
     element.stopPropagation();
 }
@@ -231,8 +230,8 @@ document.querySelectorAll(".modal").forEach(a => {
     a.addEventListener("click", e => closeModal (e, a));
 })
 
-document.querySelectorAll(".js-modal-stop").forEach(a => {
-    a.addEventListener("click", stopPropagation);
+document.querySelectorAll(".js-modal-stop").forEach(element => {
+    element.addEventListener("click", stopPropagation);
 })
 
 // Gestion des touches clavier pour la navigation
