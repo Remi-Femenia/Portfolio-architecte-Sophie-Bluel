@@ -187,10 +187,10 @@ function deleteEvent () {
 /////////// Fonctionnement de la flèche retour de la modale 2 ///////////
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
-arrowLeft.addEventListener("click", (event, element) => {
+arrowLeft.addEventListener("click", event => {
     event.preventDefault();
-    openModal(element.dataset.open);
-    closeModal(element.dataset.close);
+    openModal(event, arrowLeft);
+    closeModal(event, arrowLeft);
 })
 
 /*arrowLeft.addEventListener("click", function (event, element){
@@ -208,6 +208,20 @@ arrowLeft.addEventListener("click", (event, element) => {
 
 })
 */
+
+// Input form data
+
+const fileInput = document.getElementById("input-add-photos");
+fileInput.addEventListener("change", event => {
+    const file = fileInput.files[0];
+    const imgUploaded = document.getElementById("img-file-uploaded");
+    imgUploaded.src = URL.createObjectURL(file);
+
+    if (file.size <= 4194304){
+        
+    }
+
+})
 
 
 // Fermeture des modales
