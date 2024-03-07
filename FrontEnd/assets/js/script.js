@@ -209,17 +209,17 @@ arrowLeft.addEventListener("click", event => {
 })
 */
 
-// Input form data
+// Input du fichier utilisateur
 
 const fileInput = document.getElementById("input-add-photos");
 fileInput.addEventListener("change", event => {
     const file = fileInput.files[0];
     const imgUploaded = document.getElementById("img-file-uploaded");
-    imgUploaded.src = URL.createObjectURL(file);
 
     if (file.size <= 4194304){
-        
+        imgUploaded.src = URL.createObjectURL(file);
     }
+    
 
 })
 
