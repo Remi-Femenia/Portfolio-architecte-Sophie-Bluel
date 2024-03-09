@@ -266,7 +266,11 @@ footer nav ul {
 	cursor: pointer;
 }
 
-/****** Bannière mode éditeur ******/
+
+/***********************************
+****** BANNIERE MODE EDITEUR *******
+***********************************/
+
 .editor-banner {
 	display: flex;
 	justify-content: center;
@@ -304,7 +308,9 @@ footer nav ul {
 }
 
 
-/****** Modale (général) ******/
+/******************************
+********** MODALES ************
+******************************/
 
 .modal {
 	display: none;
@@ -438,8 +444,8 @@ footer nav ul {
 	cursor: pointer;
 }
 
-/*** Modale 2 ***/
 
+/*** Modale 2 ***/
 
 .modal2-nav {
 	display: flex;
