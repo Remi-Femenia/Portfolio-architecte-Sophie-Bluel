@@ -228,7 +228,7 @@ fileInput.addEventListener("change", event => {
 const closeModal = function (event, element) {
     event.preventDefault();
     modal = document.querySelector(element.dataset.close);
-    modal.style.display ="none";
+    modal.style.display = "none";
 }
 
 // Stop propagation

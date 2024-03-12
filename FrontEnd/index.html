@@ -16,12 +16,12 @@
 </head>
 <body>
 
-	<div class="editor-banner">
+	<div class="editor-banner edition-mode-on">
 		<i class="fa-regular fa-pen-to-square editor-banner--icon"></i>
 		<p class="editor-banner--text">Mode édition</p>
 	</div>
 
-	<aside id="modal1" class="modal1 modal" data-open="#modal1" href="#modal1" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal">
+	<aside id="modal1" class="modal1 modal" data-open="#modal1" data-close="#modal1" href="#modal1" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal">
 		<div class="modal-wrapper js-modal-stop">
 			<nav class="modal-nav modal1-nav">
 				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" data-close="#modal1"></i>
@@ -36,7 +36,7 @@
 		</div>
 	</aside>
 
-	<aside id="modal2" class="modal2 modal" data-open="#modal2">
+	<aside id="modal2" class="modal2 modal" data-open="#modal2" data-close="#modal2">
 		<div class="modal-wrapper js-modal-stop">
 			<nav class="modal-nav modal2-nav">
 				<i id="modal2-arrow-left" data-open="#modal1" data-close="#modal2" class="modal2-nav--arrow-left fa-solid fa-arrow-left fa-xl"></i>
