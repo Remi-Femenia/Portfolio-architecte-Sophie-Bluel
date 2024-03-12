@@ -278,6 +278,8 @@ footer nav ul {
 	background: #000;
 	color: white;
 	padding: 1.5em 0 1.5em 0;
+	position: relative;
+	z-index: 100;
 }
 
 .editor-banner--icon {
