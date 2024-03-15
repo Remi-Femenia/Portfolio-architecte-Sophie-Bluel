@@ -185,6 +185,10 @@ function deleteEvent () {
 
 /////////////////////////////////////////////////////////////////////////
 /////////// Fonctionnement de la flèche retour de la modale 2 ///////////
+
+const uploadedImg = document.getElementById("uploaded-photo");
+const uploadingImgDiv = document.querySelector(".modal2--upload-photo-div");
+
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
 arrowLeft.addEventListener("click", event => {
@@ -212,23 +216,25 @@ arrowLeft.addEventListener("click", event => {
 // Input du fichier utilisateur
 
 const fileInput = document.getElementById("input-add-photos");
+
 fileInput.addEventListener("change", event => {
     const file = fileInput.files[0];
-    const imgUploaded = document.getElementById("img-file-uploaded");
+    const imgUploaded = document.getElementById("uploaded-photo");
 
     if (file.size <= 4194304){
         imgUploaded.src = URL.createObjectURL(file);
+        uploadingImgDiv.style.display = "none";
     }
-    
 
 })
-
 
 // Fermeture des modales
 const closeModal = function (event, element) {
     event.preventDefault();
     modal = document.querySelector(element.dataset.close);
     modal.style.display = "none";
+    uploadingImgDiv.removeAttribute("style");
+    uploadedImg.src = "";
 }
 
 // Stop propagation
