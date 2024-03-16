@@ -459,6 +459,8 @@ footer nav ul {
 }
 
 .modal2--upload-photo-general-div {
+	display: flex;
+	justify-content: center;
 	width: 100%;
 	background-color: #E8F1F6;
 }
