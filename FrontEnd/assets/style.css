@@ -463,6 +463,7 @@ footer nav ul {
 	justify-content: center;
 	width: 100%;
 	background-color: #E8F1F6;
+	border-radius: 5px;
 }
 
 .modal2--upload-photo-div {
@@ -479,10 +480,17 @@ footer nav ul {
 	color: #B9C5CC;
 }
 
-.modal2--upload-photo-btn {
+.modal2--upload-photo-label {
+	color: #306685;
+	background-color: #CBD6DC;
 	font-family: 'Work Sans';
-	color: #000;
-	font-size: 1em;
+	cursor: pointer;
+	padding: 0.7em 1.5em;
+	border-radius: 15px;
+}
+
+.modal2--upload-photo-btn {
+	display: none;
 }
 
 .modal2--uploaded-photo-div {

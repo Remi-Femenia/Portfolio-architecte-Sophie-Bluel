@@ -48,6 +48,7 @@
 					<div class="modal2--upload-photo-div">
 						<i class="modal2--icon-img fa-regular fa-image fa-6x"></i>
 						<br>
+						<label for="input-add-photos" class="modal2--upload-photo-label">+ Ajouter photo</label>
 						<input type="file" id="input-add-photos" class="modal2--upload-photo-btn" accept=".jpg, .jpeg, .png">
 						<br>
 						<p class="modal2--upload-conditions-txt">jpg, png : 4mo max</p>
@@ -64,6 +65,7 @@
 					<div class="modal2--categories-section modal2--form-section">
 						<label class="modal2--categories-label" for="categories">Catégories</label>
 						<select name="categories" id="add-photo-form-categories" class="modal2--form-input">
+							<option value="" disabled selected hidden></option>
 							<option value="objets">Objets</option>
 							<option value="appartements">Appartements</option>
 						</select>
