@@ -234,8 +234,33 @@ fileInput.addEventListener("change", event => {
 
 // Importation des catégories en tant que <option> du <select>
 
+const categorySelect = document.getElementById("add-photo-form-categories");
 
-// Conditions d'envoi du formaulaire ok ?
+// Fonction de vérification que tous les champs du formaulaire sont remplis
+
+function areAllFormFieldsFilled () {
+
+    const fields = document.querySelectorAll("input, select");
+
+    return Array.from(fields).every(field => {
+
+        if (field.type === "file") {
+
+            return field.file.length > 0;
+
+        } else if (field.tagName === "SELECT" || field.type === "text") {
+            
+            return field.ariaValueMax.trim() !== "";
+
+        }
+
+        return true
+
+    });
+}
+
+// Changement de l'apparence du bouton si les champs sont remplis
+
 
 
 
