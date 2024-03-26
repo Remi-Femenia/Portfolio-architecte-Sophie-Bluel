@@ -259,11 +259,12 @@ function areAllFormFieldsFilled () {
     });
 }
 
+const submitButton = document.getElementById("modal2--send-form-btn");
+
 // Fonction pour activer ou désactiver le bouton d'envoi
 
 function toggleSubmitButton() {
 
-    const submitButton = document.getElementById("modal2--send-form-btn");
     submitButton.disabled = !areAllFormFieldsFilled();
 
 }
@@ -278,7 +279,7 @@ formFields.forEach(field => {
     
 })
 
-document.querySelector("form").addEventListener("submit", event => {
+submitButton.addEventListener("submit", event => {
     
     event.preventDefault();
     if (areAllFormFieldsFilled()) {
