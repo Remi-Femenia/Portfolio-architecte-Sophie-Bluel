@@ -259,8 +259,38 @@ function areAllFormFieldsFilled () {
     });
 }
 
-// Changement de l'apparence du bouton si les champs sont remplis
+// Fonction pour activer ou désactiver le bouton d'envoi
 
+function toggleSubmitButton() {
+
+    const submitButton = document.getElementById("modal2--send-form-btn");
+    submitButton.disabled = !areAllFormFieldsFilled();
+
+}
+
+// Écouteurs d'événements pour vérifier les champs lors de la modification
+
+const formFields = document.querySelectorAll(".modal2__form-element");
+formFields.forEach(field => {
+
+    field.addEventListener("change", toggleSubmitButton);
+    field.addEventListener("keyup", toggleSubmitButton);
+    
+})
+
+document.querySelector("form").addEventListener("submit", event => {
+    
+    event.preventDefault();
+    if (areAllFormFieldsFilled()) {
+      
+      // Ici, vous pouvez procéder à la soumission du formulaire ou à d'autres actions
+    } else {
+
+    }
+  });
+  
+  // Initialisation lors du chargement de la page
+  document.addEventListener('DOMContentLoaded', toggleSubmitButton);
 
 
 

@@ -373,7 +373,15 @@ footer nav ul {
 	border-style: none;
 }
 
-.modal-btn-on {
+.modal-btn:enabled {
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	margin : 3em auto 0;
+	text-align: center;
+	border-radius: 60px ;
+	padding: 10px 49px;
+	border-style: none;
 	background-color: #1D6154;
 	cursor: pointer;
 }
@@ -382,10 +390,9 @@ footer nav ul {
 	background-color: #0E2F28;
 }
 
-.modal-btn-off {
+.modal-btn:disabled {
 	background-color: #A7A7A7;
 }
-
 
 /*** Modale 1 ***/
 
