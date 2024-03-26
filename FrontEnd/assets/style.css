@@ -477,6 +477,7 @@ footer nav ul {
 
 .modal2--icon-img {
 	color: #B9C5CC;
+	margin-top: 13px;
 }
 
 .modal2--upload-photo-label {
@@ -497,7 +498,7 @@ footer nav ul {
 }
 
 #uploaded-photo {
-	max-height: 169px;
+	height: 100%;
 
 }
 
@@ -514,6 +515,12 @@ footer nav ul {
 	gap: 1em;
 }
 
+.input-text {
+	font-family: 'Work Sans';
+	padding: 18px 0 17px 16px;
+	font-size: 14px;
+}
+
 .modal2__form-label {
 	margin-bottom: 10px;
 }
@@ -524,9 +531,8 @@ footer nav ul {
 }
 
 .modal2--form-input {
-	height: 3em;
     border: none;
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 15px;
 }
 
 .modal2-title__input {

@@ -232,6 +232,13 @@ fileInput.addEventListener("change", event => {
 
 })
 
+// Importation des catégories en tant que <option> du <select>
+
+
+// Conditions d'envoi du formaulaire ok ?
+
+
+
 // Fermeture des modales
 const closeModal = function (event, element) {
     event.preventDefault();
