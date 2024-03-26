@@ -470,10 +470,9 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 0.5em;
 	width: 100%;
 	border-radius: 3px;
-	padding: 1.5em 0;
+	height: 169px;
 }
 
 .modal2--icon-img {
@@ -485,7 +484,7 @@ footer nav ul {
 	background-color: #CBD6DC;
 	font-family: 'Work Sans';
 	cursor: pointer;
-	padding: 0.7em 1.5em;
+	padding: 10px 33px;
 	border-radius: 15px;
 }
 
@@ -515,6 +514,10 @@ footer nav ul {
 	gap: 1em;
 }
 
+.modal2__form-label {
+	margin-bottom: 10px;
+}
+
 .modal2--form-section {
 	display: flex;
 	flex-direction: column;
@@ -524,5 +527,12 @@ footer nav ul {
 	height: 3em;
     border: none;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	
+}
+
+.modal2-title__input {
+	margin-bottom: 21px;
+}
+
+.modal2-categories__input {
+	margin-bottom: 47px;
 }
