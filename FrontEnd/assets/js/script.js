@@ -244,28 +244,21 @@ function areAllFormFieldsFilled () {
     const fields = document.querySelectorAll(".modal2__form-element");
 
     const allFilled = Array.from(fields).every(field => {
-        let isValid = true;
 
         if (field.type === "file") {
 
-            isValid = field.files.length > 0; // Remplacer les isValid par return une fois le débogage terminé
+            return field.files.length > 0; // Remplacer les isValid par return une fois le débogage terminé
 
         } else if (field.tagName === "SELECT" || field.type === "text") {
             
-            isValid = field.value.trim() !== "";
+            return field.value.trim() !== "";
 
         }
 
-        if (!isValid) {
-            console.log("Champ non valide:", field); // Imprime le champ non valide
-        }
-
-        /** return true **/
-        return isValid;
+        return true
 
     });
 
-    console.log(allFilled);
     return allFilled;
 
 }
