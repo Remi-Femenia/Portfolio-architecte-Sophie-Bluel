@@ -217,7 +217,7 @@ arrowLeft.addEventListener("click", event => {
 })
 */
 
-// Input du fichier utilisateur
+// Importation du fichier utilisateur
 
 const fileInput = document.getElementById("input-add-photos");
 
@@ -232,6 +232,7 @@ fileInput.addEventListener("change", event => {
 
 })
 
+
 // Importation des catégories en tant que <option> du <select>
 
 const categorySelect = document.getElementById("add-photo-form-categories");
@@ -242,21 +243,31 @@ function areAllFormFieldsFilled () {
 
     const fields = document.querySelectorAll("input, select");
 
-    return Array.from(fields).every(field => {
+    const allFilled = Array.from(fields).every(field => {
+        let isValid = true;
 
         if (field.type === "file") {
 
-            return field.file.length > 0;
+            isValid = field.files.length > 0; // Remplacer les isValid par return une fois le débogage terminé
 
         } else if (field.tagName === "SELECT" || field.type === "text") {
             
-            return field.ariaValueMax.trim() !== "";
+            isValid = field.value.trim() !== "";
 
         }
 
-        return true
+        if (!isValid) {
+            console.log("Champ non valide:", field); // Imprime le champ non valide
+        }
+
+        /** return true **/
+        return isValid;
 
     });
+
+    console.log(allFilled);
+    return allFilled;
+
 }
 
 const submitButton = document.getElementById("modal2--send-form-btn");
@@ -292,7 +303,6 @@ submitButton.addEventListener("submit", event => {
   
   // Initialisation lors du chargement de la page
   document.addEventListener('DOMContentLoaded', toggleSubmitButton);
-
 
 
 // Fermeture des modales
