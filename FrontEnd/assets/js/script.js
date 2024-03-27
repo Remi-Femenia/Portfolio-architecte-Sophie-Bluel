@@ -241,7 +241,7 @@ const categorySelect = document.getElementById("add-photo-form-categories");
 
 function areAllFormFieldsFilled () {
 
-    const fields = document.querySelectorAll("input, select");
+    const fields = document.querySelectorAll(".modal2__form-element");
 
     const allFilled = Array.from(fields).every(field => {
         let isValid = true;
