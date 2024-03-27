@@ -192,6 +192,8 @@ function deleteEvent () {
 
 const uploadedImg = document.getElementById("uploaded-photo");
 const uploadingImgDiv = document.querySelector(".modal2--upload-photo-div");
+const titleInput = document.getElementById("add-photo-form-title");
+const selectCategory = document.getElementById("add-photo-form-categories");
 
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
@@ -305,6 +307,8 @@ const closeModal = function (event, element) {
     modal.style.display = "none";
     uploadingImgDiv.removeAttribute("style");
     uploadedImg.src = "";
+    titleInput.value = "";
+    selectCategory.selectedIndex = 0;
 }
 
 // Stop propagation
