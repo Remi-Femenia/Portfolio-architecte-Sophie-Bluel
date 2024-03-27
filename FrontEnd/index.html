@@ -43,36 +43,38 @@
 				<i data-close="#modal2" class="fa-solid fa-xmark fa-xl js-modal-close"></i>
 			</nav>
 			<div class="modal-main-container">
-				<h1 id="modal-title" class="modal-title">Ajout photo</h1>
-				<div class="modal2--upload-photo-general-div">
-					<div class="modal2--upload-photo-div">
-						<i class="modal2--icon-img fa-regular fa-image fa-5x"></i>
-						<br>
-						<label for="input-add-photos" class="modal2--upload-photo-label">+ Ajouter photo</label>
-						<input type="file" id="input-add-photos" class="modal2--upload-photo-btn modal2__form-element" accept=".jpg, .jpeg, .png">
-						<br>
-						<p class="modal2--upload-conditions-txt">jpg, png : 4mo max</p>
+				<form id="modal2Form">
+					<h1 id="modal-title" class="modal-title">Ajout photo</h1>
+					<div class="modal2--upload-photo-general-div">
+						<div class="modal2--upload-photo-div">
+							<i class="modal2--icon-img fa-regular fa-image fa-5x"></i>
+							<br>
+							<label for="input-add-photos" class="modal2--upload-photo-label">+ Ajouter photo</label>
+							<input type="file" id="input-add-photos" class="modal2--upload-photo-btn modal2__form-element" accept=".jpg, .jpeg, .png">
+							<br>
+							<p class="modal2--upload-conditions-txt">jpg, png : 4mo max</p>
+						</div>
+						<div class="modal2--uploaded-photo-div">
+							<img src="" id="uploaded-photo">
+						</div>
 					</div>
-					<div class="modal2--uploaded-photo-div">
-						<img src="" id="uploaded-photo">
+					<div class="modal2--form-container">
+						<div class="modal2--title-section modal2--form-section">
+							<label class="modal2--title-label modal2__form-label" for="title">Titre</label>
+							<input type="text" name="title" id="add-photo-form-title" class="modal2--form-input modal2-title__input input-text modal2__form-element">
+						</div>
+						<div class="modal2--categories-section modal2--form-section">
+							<label class="modal2--categories-label modal2__form-label" for="categories">Catégories</label>
+							<select name="categories" id="add-photo-form-categories" class="modal2--form-input modal2__categorie--input input-text modal2__form-element">
+								<option value="" disabled selected hidden class="input-font"></option>
+								<option value="objets" class="input-text">Objets</option>
+								<option value="appartements" class="input-font">Appartements</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="modal2--form-container">
-					<div class="modal2--title-section modal2--form-section">
-						<label class="modal2--title-label modal2__form-label" for="title">Titre</label>
-						<input type="text" name="title" id="add-photo-form-title" class="modal2--form-input modal2-title__input input-text modal2__form-element">
-					</div>
-					<div class="modal2--categories-section modal2--form-section">
-						<label class="modal2--categories-label modal2__form-label" for="categories">Catégories</label>
-						<select name="categories" id="add-photo-form-categories" class="modal2--form-input modal2__categorie--input input-text modal2__form-element">
-							<option value="" disabled selected hidden class="input-font"></option>
-							<option value="objets" class="input-text">Objets</option>
-							<option value="appartements" class="input-font">Appartements</option>
-						</select>
-					</div>
-				</div>
-				<div class="separation-line"></div>
-				<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
+					<div class="separation-line"></div>
+					<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
+				</form>
 			</div>
 		</div>
 	</aside>
