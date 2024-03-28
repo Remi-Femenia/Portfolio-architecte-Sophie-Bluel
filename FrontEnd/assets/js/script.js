@@ -305,10 +305,18 @@ const closeModal = function (event, element) {
     event.preventDefault();
     modal = document.querySelector(element.dataset.close);
     modal.style.display = "none";
-    uploadingImgDiv.removeAttribute("style");
-    uploadedImg.src = "";
-    titleInput.value = "";
-    selectCategory.selectedIndex = 0;
+
+    if (modal.id === "modal2") {
+        uploadingImgDiv.removeAttribute("style");
+        uploadedImg.src = "";
+        titleInput.value = "";
+        selectCategory.selectedIndex = 0;
+
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+    }
+
 }
 
 // Stop propagation
