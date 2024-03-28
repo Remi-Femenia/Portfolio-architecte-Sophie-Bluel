@@ -331,13 +331,25 @@ footer nav ul {
 	flex-direction: column;
 	background-color: #FFF;
 	border-radius: 10px;
-	height: 53em;
-	width: 49em;
-	
+	height: 670px;
+	width: 630px;
+	/**width: 49em;
+	height: 53em;**/
 }
 
+
+
 .modal-nav {
-	padding: 3em 2em 0 2em;
+	padding: 35px 30px 15px 30px;
+}
+
+.modal__title {
+	font-family: 'Work Sans';
+	color: #000;
+	font-size: 2em;
+	font-weight: 400;
+	margin-bottom: 36px;
+	text-align: center;
 }
 
 .js-modal-close {
@@ -349,10 +361,7 @@ footer nav ul {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/*width: 630px;
-	height: 688px;*/
-	position: relative;
-	margin: 2em 8em 3em;
+	margin:0 105px;
 }
 
 .separation-line {
@@ -406,14 +415,6 @@ footer nav ul {
 	justify-content: flex-end;
 }
 
-.modal-title {
-	font-family: 'Work Sans';
-	color: #000;
-	font-size: 2em;
-	font-weight: 400;
-	padding-bottom: 1.5em;
-}
-
 .modal1-works-gallery {
 	display: flex;
 	gap: 0.5em;
@@ -463,6 +464,10 @@ footer nav ul {
 
 .modal2-nav--arrow-left {
 	cursor: pointer;
+}
+
+.modal2__form {
+	width: 100%;
 }
 
 .modal2--upload-photo-general-div {
