@@ -329,6 +329,7 @@ footer nav ul {
 .modal-wrapper {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	background-color: #FFF;
 	border-radius: 10px;
 	height: 670px;
@@ -362,6 +363,10 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 	margin:0 105px;
+}
+
+.modal__footer {
+	padding-bottom: 55px;
 }
 
 .separation-line {

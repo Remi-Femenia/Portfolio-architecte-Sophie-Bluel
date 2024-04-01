@@ -28,8 +28,9 @@
 			</nav>
 			<div class="modal-main-container">
 				<h1 id="modal1-title" class="modal__title">Galerie photo</h1>
-				<div class="modal1-works-gallery" id="modal1-works-gallery">
-				</div>
+				<div class="modal1-works-gallery" id="modal1-works-gallery"></div>
+			</div>
+			<div class="modal__footer">
 				<div class="separation-line"></div>
 				<button data-close="#modal1" data-open="#modal2" id="link-modal-2" type="submit" class="add-photo-link modal-btn modal-btn-on js-modal-close js-modal">Ajouter une photo</button>
 			</div>
@@ -75,8 +76,10 @@
 							</select>
 						</div>
 					</div>
-					<div class="separation-line"></div>
-					<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
+					<div class="modal__footer">
+						<div class="separation-line"></div>
+						<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
+					</div>
 				</form>
 			</div>
 		</div>
