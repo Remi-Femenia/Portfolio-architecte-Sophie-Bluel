@@ -541,6 +541,12 @@ footer nav ul {
 	color: #444444;
 }
 
+.upload-photos-div__error-message {
+	display: none;
+	font-size: 0.8em;
+	color: red;
+}
+
 .modal2--form-container {
 	display: flex;
 	flex-direction: column;
