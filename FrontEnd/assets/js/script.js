@@ -203,36 +203,29 @@ arrowLeft.addEventListener("click", event => {
     closeModal(event, arrowLeft);
 })
 
-/*arrowLeft.addEventListener("click", function (event, element){
+// Validation du fichier utilisateur
 
-    event.preventDefault();
+function validateImageUpload () {
+    const fileInput = document.getElementById("input-add-photos");
+    
+    fileInput.addEventListener("change", event => {
+        const file = event.target.files[0];
+        const imgUploaded = document.getElementById("uploaded-photo");
+        const maxSize = 4 * 1024 * 1024;
+        const errorMessage = document.getElementById("fileSizeError")
 
-    const modal1 = document.querySelector(element.dataset.close);
-    closeModal(modal1);
-    console.log(element);
+        if (file.size <= maxSize) {
+            imgUploaded.src = URL.createObjectURL(file);
+            uploadingImgDiv.style.display = "none";
+            console.log("Le fichier répond aux critères.")
+        } else {
+            errorMessage.style.display = "block";
+            console.log("Le fichier ne répond pas aux critères.")
+        }
 
-    const modal2 = document.querySelector(element.dataset.open);
-    openModal(modal2);
-
-    modal1.style.display = "none";
-
-})
-*/
-
-// Importation du fichier utilisateur
-
-const fileInput = document.getElementById("input-add-photos");
-
-fileInput.addEventListener("change", event => {
-    const file = fileInput.files[0];
-    const imgUploaded = document.getElementById("uploaded-photo");
-
-    if (file.size <= 4194304){
-        imgUploaded.src = URL.createObjectURL(file);
-        uploadingImgDiv.style.display = "none";
-    }
-
-})
+    })
+}
+validateImageUpload();
 
 
 // Importation des catégories en tant que <option> du <select>
