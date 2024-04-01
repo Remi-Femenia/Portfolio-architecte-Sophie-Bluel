@@ -338,7 +338,9 @@ footer nav ul {
 	height: 53em;**/
 }
 
+.modal__header {
 
+}
 
 .modal-nav {
 	padding: 35px 30px 15px 30px;
@@ -366,6 +368,9 @@ footer nav ul {
 }
 
 .modal__footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding-bottom: 55px;
 }
 

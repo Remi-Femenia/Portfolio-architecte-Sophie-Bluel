@@ -23,11 +23,13 @@
 
 	<aside id="modal1" class="modal1 modal" data-open="#modal1" data-close="#modal1" href="#modal1" aria-hidden="true" role="modal" aria-modal="false" aria-labelledby="title-modal">
 		<div class="modal-wrapper js-modal-stop">
-			<nav class="modal-nav modal1-nav">
-				<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" data-close="#modal1"></i>
-			</nav>
+			<div class="modal__header">
+				<nav class="modal-nav modal1-nav">
+					<i class="js-modal-close modal1-close fa-solid fa-xmark fa-xl" data-close="#modal1"></i>
+				</nav>
+				<h2 id="modal1-title" class="modal__title">Galerie photo</h2>
+			</div>
 			<div class="modal-main-container">
-				<h1 id="modal1-title" class="modal__title">Galerie photo</h1>
 				<div class="modal1-works-gallery" id="modal1-works-gallery"></div>
 			</div>
 			<div class="modal__footer">
@@ -40,15 +42,15 @@
 	<aside id="modal2" class="modal2 modal" data-open="#modal2" data-close="#modal2">
 		<div class="modal-wrapper js-modal-stop">
 			<div class="modal__header">
-			<nav class="modal-nav modal2-nav">
-				<i id="modal2-arrow-left" data-open="#modal1" data-close="#modal2" class="modal2-nav--arrow-left fa-solid fa-arrow-left fa-xl"></i>
-				<i data-close="s#modal2" class="fa-solid fa-xmark fa-xl js-modal-close"></i>
-			</nav>
-			<h2 id="modal2-title" class="modal__title">Ajout photo</h2>
+				<nav class="modal-nav modal2-nav">
+					<i id="modal2-arrow-left" data-open="#modal1" data-close="#modal2" class="modal2-nav--arrow-left fa-solid fa-arrow-left fa-xl"></i>
+					<i data-close="s#modal2" class="fa-solid fa-xmark fa-xl js-modal-close"></i>
+				</nav>
+				<h2 id="modal2-title" class="modal__title">Ajout photo</h2>
 			</div>
 
-			<div class="modal-main-container">
-				<form id="modal2Form" class="modal2__form">
+			<form id="modal2Form" class="modal2__form">
+				<div class="modal-main-container">
 					<div class="modal2--upload-photo-general-div">
 						<div class="modal2--upload-photo-div">
 							<i class="modal2--icon-img fa-regular fa-image fa-5x"></i>
@@ -76,12 +78,13 @@
 							</select>
 						</div>
 					</div>
-					<div class="modal__footer">
-						<div class="separation-line"></div>
-						<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
-					</div>
-				</form>
-			</div>
+				</div>
+
+				<div class="modal__footer">
+					<div class="separation-line"></div>
+					<button id="modal2--send-form-btn" class="modal-btn" type="submit" disabled>Valider</button>
+				</div>
+			</form>
 		</div>
 	</aside>
 
