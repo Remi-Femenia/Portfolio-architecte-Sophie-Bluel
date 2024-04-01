@@ -339,11 +339,11 @@ footer nav ul {
 }
 
 .modal__header {
-
+	margin: 0 30px;
 }
 
 .modal-nav {
-	padding: 35px 30px 15px 30px;
+	padding: 35px 0 15px 0;
 }
 
 .modal__title {
