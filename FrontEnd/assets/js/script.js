@@ -262,14 +262,6 @@ function areAllFormFieldsFilled () {
 
 const submitButton = document.getElementById("modal2--send-form-btn");
 
-// Fonction pour activer ou désactiver le bouton d'envoi
-
-function toggleSubmitButton() {
-
-    submitButton.disabled = !areAllFormFieldsFilled();
-
-}
-
 // Écouteurs d'événements pour vérifier les champs lors de la modification
 
 const formFields = document.querySelectorAll(".modal2__form-element");
@@ -279,6 +271,14 @@ formFields.forEach(field => {
     field.addEventListener("keyup", toggleSubmitButton);
     
 })
+
+// Fonction pour activer ou désactiver le bouton d'envoi
+
+function toggleSubmitButton() {
+
+    submitButton.disabled = !areAllFormFieldsFilled();
+
+}
 
 submitButton.addEventListener("submit", event => {
     
@@ -290,7 +290,7 @@ submitButton.addEventListener("submit", event => {
 
     }
 });
-  
+
   // Initialisation lors du chargement de la page
   document.addEventListener('DOMContentLoaded', toggleSubmitButton);
 
