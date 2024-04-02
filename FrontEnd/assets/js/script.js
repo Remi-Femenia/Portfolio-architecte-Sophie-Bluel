@@ -195,6 +195,7 @@ const uploadingImgDiv = document.querySelector(".modal2--upload-photo-div");
 const titleInput = document.getElementById("add-photo-form-title");
 const selectCategory = document.getElementById("add-photo-form-categories");
 const errorMessage = document.getElementById("fileSizeError");
+const uploadInstructions = document.querySelector(".modal2--upload-conditions-txt");
 
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
@@ -213,7 +214,6 @@ function validateImageUpload () {
         const file = event.target.files[0];
         const imgUploaded = document.getElementById("uploaded-photo");
         const maxSize = 4 * 1024 * 1024;
-        const uploadInstructions = document.querySelector(".modal2--upload-conditions-txt");
 
         if (file.size <= maxSize) {
             imgUploaded.src = URL.createObjectURL(file);
@@ -289,7 +289,7 @@ submitButton.addEventListener("submit", event => {
     } else {
 
     }
-  });
+});
   
   // Initialisation lors du chargement de la page
   document.addEventListener('DOMContentLoaded', toggleSubmitButton);
@@ -307,6 +307,8 @@ const closeModal = function (event, element) {
         titleInput.value = "";
         selectCategory.selectedIndex = 0;
         errorMessage.removeAttribute("style");
+        uploadInstructions.removeAttribute("style");
+
 
         if (submitButton) {
             submitButton.disabled = true;
