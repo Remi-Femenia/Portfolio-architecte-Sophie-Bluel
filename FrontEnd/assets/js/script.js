@@ -1,13 +1,18 @@
 let exemple = await fetch("http://localhost:5678/api/works");
 let works = await exemple.json();
 
-fetch("http://localhost:5678/api/categories")
-.then(response => response.json())
-.then(categories => {
-    for (let i = 0; i < categories.length; i++) {
-        createCategorieProject(categories[i])
-    }
-})
+let categoriesCache = null;
+
+async function fetchCategories() {
+  if (categoriesCache !== null) {
+    return categoriesCache; // Retourne les données en cache si disponibles
+  }
+  
+  const response = await fetch("http://localhost:5678/api/categories");
+  const data = await response.json(); // Convertit les données JSON en objets/arrays JavaScript
+  categoriesCache = data; // Cache les données converties
+  return data;
+}
 
 const portfolioGallery = document.querySelector(".gallery");
 
@@ -47,6 +52,15 @@ function createCardProject (work) {
 }
 
 // Fonction servant à créer les boutons de filtre
+
+fetchCategories().then(categories => {
+    categories.forEach(category => {
+        createCategorieProject(category);
+    });
+}).catch(error => {
+    console.error("Erreur lors de la récupération des catégories:", error);
+});
+
 function createCategorieProject (categorie) {
 
     // Création de chaque élément dans des balises <li>
