@@ -412,7 +412,6 @@ const closeModal = function (event, element) {
         errorMessage.removeAttribute("style");
         uploadInstructions.removeAttribute("style");
 
-
         if (submitButton) {
             submitButton.disabled = true;
         }
