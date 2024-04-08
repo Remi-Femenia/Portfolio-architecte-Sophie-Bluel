@@ -6,11 +6,13 @@ let works = await exemple.json();
 //////////////////////////////// API //////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
+
 /////////////////////////////// CACHES ////////////////////////////////
 
 // Données de l'API en cache
 let worksCache = null;
 let categoriesCache = null;
+
 
 /////////////////////////////// FETCH /////////////////////////////////
 
@@ -29,7 +31,7 @@ async function fetchWorks() {
 // Fetch de récupération des catégories
 async function fetchCategories() {
     if (categoriesCache !== null) {
-        return categoriesCache; // Retourne les données en cache si disponibles
+        return categoriesCache;
     }
   
     const response = await fetch("http://localhost:5678/api/categories");
@@ -38,10 +40,39 @@ async function fetchCategories() {
     return data;
 }
 
+
+
+///////////////////////////////////////////////////////////////////////
+////////////////////////////// INDEX //////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////// PORTFOLIO ///////////////////////////////
+
 const portfolioGallery = document.querySelector(".gallery");
 
+// Fonction de création des éléments dans la galerie portfolio
+function createPortfolioItems (work) {
+
+    // Création de la balise <img> avec récupération de l'élément
+    const imageProject = document.createElement("img");
+    imageProject.src = work.imageUrl;
+
+    // Création de la balise <figcaption> avec récupération de l'élément
+    const titleProject = document.createElement("figcaption");
+    titleProject.innerText = work.title;
+
+    // Éléments de la galerie
+    const cardProject = document.createElement("figure");
+
+    //Rattachement des balises <img> et <figcaption> à une balise <figure>
+    cardProject.appendChild(imageProject);
+    cardProject.appendChild(titleProject);
+    portfolioGallery.appendChild(cardProject);
+}
+
 for (let i = 0; i < works.length; i++) {
-    createCardProject(works[i])
+    createPortfolioItems(works[i])
 }
 
 const btnTous = document.querySelector("#btn-tous");
@@ -49,37 +80,12 @@ btnTous.addEventListener("click", function (){
     
     portfolioGallery.innerHTML = "";
     for (let i = 0; i < works.length; i++) {
-        createCardProject(works[i]);
+        createPortfolioItems(works[i]);
     }
 
 })
 
-/*
-// Fonction de création des éléments dans la galerie portfolio
-function createCardProject (work) {
-
-        // Création de la balise <img> avec récupération de l'élément
-        const imageProject = document.createElement("img");
-        imageProject.src = work.imageUrl;
-
-        // Création de la balise <figcaption> avec récupération de l'élément
-        const titleProject = document.createElement("figcaption");
-        titleProject.innerText = work.title;
-
-        // Éléments de la galerie
-        const cardProject = document.createElement("figure");
-
-        //Rattachement des balises <img> et <figcaption> à une balise <figure>
-        cardProject.appendChild(imageProject);
-        cardProject.appendChild(titleProject);
-        portfolioGallery.appendChild(cardProject);
-
-}*/
-
 // Fonction servant à créer les boutons de filtre
-
-// Nouvelle version
-
 async function initializeCategoryFilters() {
     try {
         const categories = await fetchCategories();
@@ -105,38 +111,15 @@ function createCategoryFilterButton(category) {
 }
 
 async function filterAndDisplayProjects(categoryName) {
-    const works = await fetchWorks(); // Assurez-vous que cette fonction existe et récupère tous les travaux
+    const works = await fetchWorks();
     const projectsFiltered = works.filter(work => work.category.name === categoryName);
 
     const portfolioGallery = document.querySelector(".gallery");
     portfolioGallery.innerHTML = ""; // Vide la galerie avant de la remplir avec les projets filtrés
 
-    projectsFiltered.forEach(createCardProject);
+    projectsFiltered.forEach(createPortfolioItems);
 }
 
-// Fonction pour créer les cartes de projet, déjà définie dans votre question
-// Fonction de création des éléments dans la galerie portfolio
-function createCardProject (work) {
-
-    // Création de la balise <img> avec récupération de l'élément
-    const imageProject = document.createElement("img");
-    imageProject.src = work.imageUrl;
-
-    // Création de la balise <figcaption> avec récupération de l'élément
-    const titleProject = document.createElement("figcaption");
-    titleProject.innerText = work.title;
-
-    // Éléments de la galerie
-    const cardProject = document.createElement("figure");
-
-    //Rattachement des balises <img> et <figcaption> à une balise <figure>
-    cardProject.appendChild(imageProject);
-    cardProject.appendChild(titleProject);
-    portfolioGallery.appendChild(cardProject);
-
-}
-
-// Assurez-vous que cette fonction est appelée pour initialiser les filtres
 initializeCategoryFilters();
 
 
@@ -285,7 +268,7 @@ function deleteEvent () {
     gallery.innerHTML = "";
 
     for (let i = 0; i < worksList.length; i++) {  
-        createCardProject(worksList[i]);
+        createPortfolioItems(worksList[i]);
     }
 }
 
