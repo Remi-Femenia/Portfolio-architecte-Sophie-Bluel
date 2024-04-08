@@ -47,7 +47,7 @@ async function fetchCategories() {
 ///////////////////////////////////////////////////////////////////////
 
 
-///////////////////////////// PORTFOLIO ///////////////////////////////
+/////////////////////////// GALERIE PORTFOLIO /////////////////////////
 
 const portfolioGallery = document.querySelector(".gallery");
 
@@ -75,15 +75,7 @@ for (let i = 0; i < works.length; i++) {
     createPortfolioItems(works[i])
 }
 
-const btnTous = document.querySelector("#btn-tous");
-btnTous.addEventListener("click", function (){
-    
-    portfolioGallery.innerHTML = "";
-    for (let i = 0; i < works.length; i++) {
-        createPortfolioItems(works[i]);
-    }
-
-})
+////////////////////////// FILTRES PORTFOLIO /////////////////////////////
 
 // Fonction servant à créer les boutons de filtre
 async function initializeCategoryFilters() {
@@ -121,6 +113,16 @@ async function filterAndDisplayProjects(categoryName) {
 }
 
 initializeCategoryFilters();
+
+const btnTous = document.querySelector("#btn-tous");
+btnTous.addEventListener("click", function (){
+    
+    portfolioGallery.innerHTML = "";
+    for (let i = 0; i < works.length; i++) {
+        createPortfolioItems(works[i]);
+    }
+
+})
 
 
 ///////////////////////// Ancienne version
