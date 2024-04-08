@@ -1,5 +1,5 @@
-let exemple = await fetch("http://localhost:5678/api/works");
-let works = await exemple.json();
+/*let exemple = await fetch("http://localhost:5678/api/works");
+let works = await exemple.json();*/
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -47,9 +47,41 @@ async function fetchCategories() {
 ///////////////////////////////////////////////////////////////////////
 
 
-/////////////////////////// GALERIE PORTFOLIO /////////////////////////
+///////////////////////// GALERIE PORTFOLIO ///////////////////////////
 
 const portfolioGallery = document.querySelector(".gallery");
+
+// Fonction pour initialiser la galerie portfolio avec les travaux récupérés
+async function initializePortfolio() {
+    try {
+        const works = await fetchWorks(); // Récupère les travaux de l'API
+        works.forEach(addPortfolioItem); // Ajoute chaque projet au DOM
+    } catch (error) {
+        console.error("Erreur lors de la récupération des travaux :", error);
+    }
+}
+
+// Assurez-vous que `initializePortfolio` est appelée lorsque la page est chargée
+document.addEventListener('DOMContentLoaded', initializePortfolio);
+
+// Fonction pour ajouter un élément au portfolio
+const addPortfolioItem = item => {
+  const imageElement = document.createElement("img");
+  imageElement.src = item.imageUrl;
+
+  const titleElement = document.createElement("figcaption");
+  titleElement.innerText = item.title;
+
+  const cardElement = document.createElement("figure");
+  cardElement.append(imageElement, titleElement); // Utilise append pour ajouter plusieurs éléments
+  portfolioGallery.appendChild(cardElement);
+}
+
+/*// Itération sur le tableau works et ajout des éléments dans le DOM
+const works = await fetchWorks();
+works.forEach(addPortfolioItem);*/
+
+/*const portfolioGallery = document.querySelector(".gallery");
 
 // Fonction de création des éléments dans la galerie portfolio
 function createPortfolioItems (work) {
@@ -73,7 +105,7 @@ function createPortfolioItems (work) {
 
 for (let i = 0; i < works.length; i++) {
     createPortfolioItems(works[i])
-}
+}*/
 
 ////////////////////////// FILTRES PORTFOLIO /////////////////////////////
 
@@ -109,7 +141,7 @@ async function filterAndDisplayProjects(categoryName) {
     const portfolioGallery = document.querySelector(".gallery");
     portfolioGallery.innerHTML = ""; // Vide la galerie avant de la remplir avec les projets filtrés
 
-    projectsFiltered.forEach(createPortfolioItems);
+    projectsFiltered.forEach(addPortfolioItem);
 }
 
 initializeCategoryFilters();
@@ -119,7 +151,7 @@ btnTous.addEventListener("click", function (){
     
     portfolioGallery.innerHTML = "";
     for (let i = 0; i < works.length; i++) {
-        createPortfolioItems(works[i]);
+        addPortfolioItem(works[i]);
     }
 
 })
@@ -284,7 +316,6 @@ const titleInput = document.getElementById("add-photo-form-title");
 const selectCategory = document.getElementById("add-photo-form-categories");
 const errorMessage = document.getElementById("fileSizeError");
 const uploadInstructions = document.querySelector(".modal2--upload-conditions-txt");
-
 const arrowLeft = document.getElementById("modal2-arrow-left");
 
 arrowLeft.addEventListener("click", event => {
