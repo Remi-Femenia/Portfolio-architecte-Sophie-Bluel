@@ -159,6 +159,7 @@ nav img {
 	padding: 0.6em 1.3em;
 	font-size: 1.1em;
 	cursor: pointer;
+	background-color: #FFFFFF;
 }
 
 .categories__button:focus {
