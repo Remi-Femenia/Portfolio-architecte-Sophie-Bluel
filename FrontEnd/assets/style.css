@@ -151,15 +151,24 @@ nav img {
 	color: #1D6154;
 }
 
-.categories--object {
+.categories__button {
+	font-family: 'Syne';
+	color: #1D6154;
 	border: 1px solid #1D6154;
 	border-radius: 25px;
 	padding: 0.6em 1.3em;
-	font-size: 1em;
+	font-size: 1.1em;
 	cursor: pointer;
 }
 
-.categories--object:hover {
+.categories__button:focus {
+	background-color: #1D6154;
+	padding: 0.6em 1.3em;
+	color: white;
+	cursor: default;
+}
+
+.categories__button:hover {
 	background-color: #1D6154;
 	color: white;
 }

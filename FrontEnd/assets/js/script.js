@@ -121,15 +121,17 @@ async function initializeCategoryFilters() {
 
 function createCategoryFilterButton(category) {
     // Création de chaque élément dans des balises <li>
-    const titleCategory = document.createElement("li");
-    titleCategory.innerText = category.name;
-    titleCategory.classList.add("categories--object");
+    const filterTitle = document.createElement("button");
+    filterTitle.innerText = category.name;
+    filterTitle.classList.add("categories__button");
 
-    const listTri = document.querySelector("#categories");
-    listTri.appendChild(titleCategory);
+    const buttonListContainer = document.createElement("li");
+    const filterSection = document.querySelector("#categories");
+    buttonListContainer.appendChild(filterTitle)
+    filterSection.appendChild(buttonListContainer);
 
     // Interaction au clic avec le bouton
-    titleCategory.addEventListener("click", function() {
+    filterTitle.addEventListener("click", function() {
         filterAndDisplayProjects(category.name);
     });
 }
