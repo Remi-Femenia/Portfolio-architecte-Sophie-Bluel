@@ -479,7 +479,6 @@ function initializeWebsite() {
 
     const allCategoriesButton = document.getElementById("all-categories-btn");
     allCategoriesButton.focus();
-    console.log(allCategoriesButton);
     allCategoriesButton.addEventListener("click", function() {
         portfolioGallery.innerHTML = ""; // Nettoie la galerie
         initializePortfolio(); // Ré-affiche tous les projets
