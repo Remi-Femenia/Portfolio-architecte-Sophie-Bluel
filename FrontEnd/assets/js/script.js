@@ -146,19 +146,6 @@ async function filterAndDisplayProjects(categoryName) {
     projectsFiltered.forEach(addPortfolioItem);
 }
 
-initializeCategoryFilters();
-
-const allCategoriesButton = document.querySelector("#all-categories-btn");
-allCategoriesButton.addEventListener("click", function (){
-    
-    portfolioGallery.innerHTML = "";
-    for (let i = 0; i < works.length; i++) {
-        addPortfolioItem(works[i]);
-    }
-
-})
-
-
 ///////////////////////// Ancienne version
 
 /**fetchCategories().then(categories => {
@@ -470,3 +457,36 @@ window.addEventListener('keydown', function (e) {
         focusInModal(e)
     }
 })
+
+
+///////////////////////////////////////////////////////////////////////
+//////////////////////////// INITIALISATION ///////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+/*const allCategoriesButton = document.querySelector("#all-categories-btn");
+allCategoriesButton.addEventListener("click", function (){
+    
+    portfolioGallery.innerHTML = "";
+    for (let i = 0; i < works.length; i++) {
+        addPortfolioItem(works[i]);
+    }
+
+})*/
+
+function initializeWebsite() {
+    initializePortfolio();
+    initializeCategoryFilters();
+    // Autres initialisations nécessaires...
+
+    const allCategoriesButton = document.getElementById("all-categories-btn");
+    allCategoriesButton.focus();
+    console.log(allCategoriesButton);
+    allCategoriesButton.addEventListener("click", function() {
+        portfolioGallery.innerHTML = ""; // Nettoie la galerie
+        initializePortfolio(); // Ré-affiche tous les projets
+    });
+
+}
+
+// 4. Configuration des Écouteurs d'Événements
+document.addEventListener('DOMContentLoaded', initializeWebsite());
