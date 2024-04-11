@@ -474,7 +474,6 @@ allCategoriesButton.addEventListener("click", function (){
 })*/
 
 function initializeWebsite() {
-    initializePortfolio();
     initializeCategoryFilters();
     // Autres initialisations nécessaires...
 
