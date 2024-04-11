@@ -148,8 +148,8 @@ async function filterAndDisplayProjects(categoryName) {
 
 initializeCategoryFilters();
 
-const btnTous = document.querySelector("#btn-tous");
-btnTous.addEventListener("click", function (){
+const allCategoriesButton = document.querySelector("#all-categories-btn");
+allCategoriesButton.addEventListener("click", function (){
     
     portfolioGallery.innerHTML = "";
     for (let i = 0; i < works.length; i++) {
