@@ -6,8 +6,8 @@
 /////////////////////////////// CACHES ////////////////////////////////
 
 // Données de l'API en cache
-let worksCache = null;
-let categoriesCache = null;
+export let worksCache = null;
+export let categoriesCache = null;
 
 
 /////////////////////////////// FETCH /////////////////////////////////

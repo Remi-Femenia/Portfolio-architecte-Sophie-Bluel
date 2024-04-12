@@ -1,4 +1,4 @@
-import { fetchWorks, fetchCategories } from "./utils.js";
+import { fetchWorks, fetchCategories, worksCache, categoriesCache } from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////////// MODALES ///////////////////////////////
@@ -23,6 +23,7 @@ const userId = window.localStorage.getItem("userId");
 let worksList = await apiWorks.json();*/
 
 
+console.log(worksCache);
 
 // Fonction d'affichage des modales //
 const openModal = async function (event, element) {
