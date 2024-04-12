@@ -1,6 +1,6 @@
 // Utiliser .trim() pour nettoyer le champ de saisie
 
-const loginForm = document.querySelector("loginForm");
+const loginForm = document.getElementById("loginForm");
 
 async function loginUser (email, password) {
 
@@ -41,5 +41,4 @@ loginForm.addEventListener("submit", async event => {
     const userPassword = document.getElementById("loginPassword").value;
 
     loginUser(userEmail, userPassword);
-
 })
