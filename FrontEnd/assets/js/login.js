@@ -2,7 +2,7 @@
 
 const loginForm = document.querySelector("loginForm");
 
-async function login (email, password) {
+async function loginUser (email, password) {
 
     const response = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
@@ -40,6 +40,6 @@ loginForm.addEventListener("submit", async event => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    login(email, password);
+    loginUser(email, password);
 
 })
