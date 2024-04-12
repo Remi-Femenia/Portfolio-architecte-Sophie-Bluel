@@ -1,5 +1,5 @@
-import { fetchWorks } from './script.js';
-import { fetchCategories } from './script.js';
+import { fetchWorks } from "./script.js";
+import { fetchCategories } from "./script.js";
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////////// MODALES ///////////////////////////////
@@ -24,6 +24,7 @@ const userId = window.localStorage.getItem("userId");
 let worksList = await apiWorks.json();*/
 
 
+
 // Fonction d'affichage des modales //
 const openModal = async function (event, element) {
 
@@ -43,7 +44,6 @@ const openModal = async function (event, element) {
     }
 
     deleteEvent();
-
 }
 
 ////// Création des images des travaux dans la fenêtre modale 1 //////
@@ -97,11 +97,15 @@ function deleteEvent () {
     const modalWorksGallery = document.getElementById("modal1-works-gallery");
     modalWorksGallery.innerHTML = "";
 
-    for (let i = 0; i < worksList.length; i++) { 
+    console.log(fetchWorks);
+
+    fetchWorks.forEach(createModalWorks);
+
+    /*for (let i = 0; i < fetchWorks.length; i++) { 
 
         createModalWorks(worksList[i]);
 
-    }
+    }*/
 
     // Rechargement de la gallery du portfolio
     const gallery = document.querySelector(".gallery");
@@ -238,7 +242,6 @@ const closeModal = function (event, element) {
             submitButton.disabled = true;
         }
     }
-
 }
 
 // Stop propagation
