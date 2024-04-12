@@ -1,10 +1,4 @@
-/*let exemple = await fetch("http://localhost:5678/api/works");
-let works = await exemple.json();*/
-import { 
-    fetchWorks, 
-    fetchCategories,
-} from "./utils.js";
-
+import { fetchWorks, fetchCategories } from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////////////////// INDEX //////////////////////////////////
