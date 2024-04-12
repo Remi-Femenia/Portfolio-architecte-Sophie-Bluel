@@ -4,19 +4,20 @@ const loginForm = document.getElementById("loginForm");
 
 async function loginUser (email, password) {
 
-    const response = await fetch("http://localhost:5678/api/users/login", {
+    const fetchLogin = await fetch("http://localhost:5678/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({"email": email, "password": password})
     });
     
-    if (response.ok) {
-        let loginResponse = await response.json();
+    if (fetchLogin.ok) {
+        let loginResponse = await fetchLogin.json();
 
         window.localStorage.setItem("id", loginResponse.userId);
         window.localStorage.setItem("token", loginResponse.token);
 
         window.location.href="index.html";
+
     }
     else {
         const loginError = document.getElementById("login-error");

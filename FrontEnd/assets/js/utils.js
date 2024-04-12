@@ -35,3 +35,21 @@ export async function fetchCategories() {
     categoriesCache = data; // Cache les données converties
     return data;
 }
+
+
+/////////////////////////// MODE EDITION //////////////////////////////
+
+// Fonction d'affichage du mode édition
+export function enableEditMode () {
+    const editModeBanner = document.getElementById("editModeBanner");
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+    const openEditModalButton = document.getElementById("openEditModalButton");
+    const categoryFilters = document.getElementById("categories");
+
+    editModeBanner.style.display = "flex";
+    loginButton.style.display = "none";
+    logoutButton.style.display = "list-item";
+    openEditModalButton.style.display = "block";
+    categoryFilters.style.display = "none";
+}
