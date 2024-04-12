@@ -1,5 +1,7 @@
-import { fetchWorks } from "./script.js";
-import { fetchCategories } from "./script.js";
+import { 
+    fetchWorks, 
+    fetchCategories,
+} from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////////// MODALES ///////////////////////////////
