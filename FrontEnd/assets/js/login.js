@@ -37,9 +37,9 @@ loginForm.addEventListener("submit", async event => {
 
     event.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const userEmail = document.getElementById("loginEmail").value;
+    const userPassword = document.getElementById("loginPassword").value;
 
-    loginUser(email, password);
+    loginUser(userEmail, userPassword);
 
 })
