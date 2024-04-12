@@ -1,18 +1,6 @@
 // Utiliser .trim() pour nettoyer le champ de saisie
 
-const form = document.querySelector('form');
-
-form.addEventListener("submit", async (event) => {
-
-    event.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    login(email, password);
-
-})
-
+const loginForm = document.querySelector("loginForm");
 
 async function login (email, password) {
 
@@ -44,3 +32,14 @@ async function login (email, password) {
         loginError.classList.add("login-error");
     }
 }
+
+loginForm.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    login(email, password);
+
+})
