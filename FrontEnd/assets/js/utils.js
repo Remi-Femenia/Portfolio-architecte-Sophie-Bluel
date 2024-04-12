@@ -39,17 +39,26 @@ export async function fetchCategories() {
 
 /////////////////////////// MODE EDITION //////////////////////////////
 
+export const editModeBanner = document.getElementById("editModeBanner");
+export const loginButton = document.getElementById("loginButton");
+export const logoutButton = document.getElementById("logoutButton");
+export const openEditModalButton = document.getElementById("openEditModalButton");
+export const categoryFilters = document.getElementById("categories");
+
 // Fonction d'affichage du mode édition
 export function enableEditMode () {
-    const editModeBanner = document.getElementById("editModeBanner");
-    const loginButton = document.getElementById("loginButton");
-    const logoutButton = document.getElementById("logoutButton");
-    const openEditModalButton = document.getElementById("openEditModalButton");
-    const categoryFilters = document.getElementById("categories");
-
     editModeBanner.style.display = "flex";
     loginButton.style.display = "none";
     logoutButton.style.display = "list-item";
     openEditModalButton.style.display = "block";
     categoryFilters.style.display = "none";
+}
+
+//Fonction de masquage du mode édition
+export function disableEditMode () {
+    editModeBanner.removeAttribute("style");
+    loginButton.removeAttribute("style");
+    logoutButton.removeAttribute("style");
+    openEditModalButton.removeAttribute("style");
+    categoryFilters.removeAttribute("style");
 }

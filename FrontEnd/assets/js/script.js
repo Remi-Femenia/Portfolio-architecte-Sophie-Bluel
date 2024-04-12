@@ -1,4 +1,8 @@
-import { fetchWorks, fetchCategories, worksCache, categoriesCache } from "./utils.js";
+import {
+    fetchWorks, fetchCategories, worksCache, categoriesCache,
+    editModeBanner, loginButton, logoutButton, openEditModalButton, categoryFilters,
+    enableEditMode, disableEditMode,
+} from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////////////////// INDEX //////////////////////////////////
