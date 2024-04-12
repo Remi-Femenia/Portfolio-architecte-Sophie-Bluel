@@ -272,7 +272,7 @@ footer nav ul {
 .login-error {
 	display: block;
 	color: red;
-	padding: 2em;
+	padding-top: 1.5em;
 	text-align: center;
 	font-weight: 800;
 }
