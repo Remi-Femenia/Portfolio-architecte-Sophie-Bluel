@@ -1,7 +1,7 @@
 import {
-    fetchWorks, fetchCategories, worksCache, categoriesCache,
+    fetchWorks, fetchCategories, worksCache, categoriesCache, works, categories,
     editModeBanner, loginButton, logoutButton, openEditModalButton, categoryFilters,
-    enableEditMode, disableEditMode,
+    enableEditMode, disableEditMode, portfolioGallery, addPortfolioItem, initializePortfolio
 } from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
@@ -11,70 +11,14 @@ import {
 
 ///////////////////////// GALERIE PORTFOLIO ///////////////////////////
 
-const portfolioGallery = document.querySelector(".gallery");
+// Voir les fonctions et va
 
-// Fonction pour initialiser la galerie portfolio avec les travaux récupérés
-async function initializePortfolio() {
-    try {
-        const works = await fetchWorks(); // Récupère les travaux de l'API
-        works.forEach(addPortfolioItem); // Ajoute chaque projet au DOM
-    } catch (error) {
-        console.error("Erreur lors de la récupération des travaux :", error);
-    }
-}
-
-// Assurez-vous que `initializePortfolio` est appelée lorsque la page est chargée
-document.addEventListener('DOMContentLoaded', initializePortfolio);
-
-// Fonction pour ajouter un élément au portfolio
-const addPortfolioItem = item => {
-  const imageElement = document.createElement("img");
-  imageElement.src = item.imageUrl;
-
-  const titleElement = document.createElement("figcaption");
-  titleElement.innerText = item.title;
-
-  const cardElement = document.createElement("figure");
-  cardElement.append(imageElement, titleElement); // Utilise append pour ajouter plusieurs éléments
-  portfolioGallery.appendChild(cardElement);
-}
-
-/*// Itération sur le tableau works et ajout des éléments dans le DOM
-const works = await fetchWorks();
-works.forEach(addPortfolioItem);*/
-
-/*const portfolioGallery = document.querySelector(".gallery");
-
-// Fonction de création des éléments dans la galerie portfolio
-function createPortfolioItems (work) {
-
-    // Création de la balise <img> avec récupération de l'élément
-    const imageProject = document.createElement("img");
-    imageProject.src = work.imageUrl;
-
-    // Création de la balise <figcaption> avec récupération de l'élément
-    const titleProject = document.createElement("figcaption");
-    titleProject.innerText = work.title;
-
-    // Éléments de la galerie
-    const cardProject = document.createElement("figure");
-
-    //Rattachement des balises <img> et <figcaption> à une balise <figure>
-    cardProject.appendChild(imageProject);
-    cardProject.appendChild(titleProject);
-    portfolioGallery.appendChild(cardProject);
-}
-
-for (let i = 0; i < works.length; i++) {
-    createPortfolioItems(works[i])
-}*/
 
 ////////////////////////// FILTRES PORTFOLIO /////////////////////////////
 
 // Fonction servant à créer les boutons de filtre
 async function initializeCategoryFilters() {
     try {
-        const categories = await fetchCategories();
         categories.forEach(createCategoryFilterButton);
     } catch (error) {
         console.error("Erreur lors de la récupération des catégories:", error);
@@ -171,6 +115,7 @@ allCategoriesButton.addEventListener("click", function (){
 
 function initializeWebsite() {
     initializeCategoryFilters();
+    initializePortfolio();
     // Autres initialisations nécessaires...
 
     const allCategoriesButton = document.getElementById("all-categories-btn");

@@ -1,11 +1,9 @@
-import { fetchWorks, fetchCategories, worksCache, categoriesCache } from "./utils.js";
+import { fetchWorks, fetchCategories, worksCache, categoriesCache, works, categories, initializePortfolio } from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
-/////////////////////////////// MODALES ///////////////////////////////
+/////////////////////////////// GLOBAL ////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-
-/////////////////////////////// GENERAL ///////////////////////////////
 
 let modal = null;
 const focusableSelector = "button, a, input, textarea";
@@ -16,38 +14,15 @@ let focusables = [];
 const userId = window.localStorage.getItem("userId");
 
 
-/////////////////////////////// MODALE 1 ///////////////////////////////
-
-// Importation des images des travaux de l'API
-/*let apiWorks = await fetch("http://localhost:5678/api/works");
-let worksList = await apiWorks.json();*/
+///////////////////////////////////////////////////////////////////////
+////////////////////////////// MODALE 1 ///////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
 
-console.log(worksCache);
+////////////////////////////// GALERIE ////////////////////////////////
 
-// Fonction d'affichage des modales //
-const openModal = async function (event, element) {
-
-    event.preventDefault();
-    modal = document.querySelector(element.dataset.open);
-    modal.style.display = "flex";
-    modal.removeAttribute('aria-hidden');
-    document.getElementById("modal1-works-gallery").innerHTML = "";
-
-    /*for (let i = 0; i < worksList.length; i++) {
-        createModalWorks(worksList[i]);
-    }*/
-
-    if (modal.id === "modal1") {
-        const works = await fetchWorks();
-        works.forEach(createModalWorks);
-    }
-
-    deleteEvent();
-}
-
-////// Création des images des travaux dans la fenêtre modale 1 //////
-async function createModalWorks (work) {
+//Fonction de création des images des travaux
+async function createWorkGalleryModal (work) {
 
     // Images des travaux
     const imgWorks = work.imageUrl;
@@ -94,29 +69,16 @@ function deleteEvent () {
          })
     }
 
-    const modalWorksGallery = document.getElementById("modal1-works-gallery");
-    modalWorksGallery.innerHTML = "";
-
-    console.log(fetchWorks);
-
-    fetchWorks.forEach(createModalWorks);
-
-    /*for (let i = 0; i < fetchWorks.length; i++) { 
-
-        createModalWorks(worksList[i]);
-
-    }*/
-
-    // Rechargement de la gallery du portfolio
-    const gallery = document.querySelector(".gallery");
-    gallery.innerHTML = "";
-
-    for (let i = 0; i < worksList.length; i++) {  
-        createPortfolioItems(worksList[i]);
-    }
+    initializePortfolio()
 }
 
-/////////////////////////////// MODALE 2 ///////////////////////////////
+
+///////////////////////////////////////////////////////////////////////
+////////////////////////////// MODALE 2 ///////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////// NAVIGATION //////////////////////////////
 
 // Fonctionnement de la flèche retour de la modale 2
 
@@ -133,6 +95,9 @@ arrowLeft.addEventListener("click", event => {
     openModal(event, arrowLeft);
     closeModal(event, arrowLeft);
 })
+
+
+///////////////////////////// FORMULAIRE //////////////////////////////
 
 // Validation du fichier utilisateur
 
@@ -277,3 +242,26 @@ window.addEventListener('keydown', function (e) {
         focusInModal(e)
     }
 })
+
+
+//////////////////// FONCTIONS GENERALES DES MODALES //////////////////
+
+// Fonction d'ouverture des modales
+const openModal = async function (event, element) {
+
+    event.preventDefault();
+    modal = document.querySelector(element.dataset.open);
+    modal.style.display = "flex";
+    modal.removeAttribute('aria-hidden');
+    document.getElementById("modal1-works-gallery").innerHTML = "";
+
+    /*for (let i = 0; i < worksList.length; i++) {
+        createModalWorks(worksList[i]);
+    }*/
+
+    if (modal.id === "modal1") {
+        works.forEach(createWorkGalleryModal);
+    }
+
+    deleteEvent();
+}
