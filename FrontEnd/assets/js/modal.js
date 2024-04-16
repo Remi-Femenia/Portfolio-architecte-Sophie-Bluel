@@ -112,11 +112,9 @@ function validateImageUpload () {
         if (file.size <= maxSize) {
             imgUploaded.src = URL.createObjectURL(file);
             uploadingImgDiv.style.display = "none";
-            console.log("Le fichier répond aux critères.")
         } else {
             uploadInstructions.style.display = "none";
             errorMessage.style.display = "block";
-            console.log("Le fichier ne répond pas aux critères.")
         }
 
     })
