@@ -99,8 +99,10 @@ arrowLeft.addEventListener("click", event => {
 
 ///////////////////////////// FORMULAIRE //////////////////////////////
 
-// Validation du fichier utilisateur
+const categorySelect = document.getElementById("add-photo-form-categories");
 
+
+// Validation du fichier utilisateur
 function validateImageUpload () {
     const fileInput = document.getElementById("input-add-photos");
     
@@ -122,14 +124,26 @@ function validateImageUpload () {
 validateImageUpload();
 
 
-// Importation des catégories en tant que <option> du <select>
+// Fonction de création des éléments du select
+function createSelectCategories (category) {
+    const optionItem = document.createElement("option");
+    optionItem.value = category.name;
+    optionItem.innerText = category.name;
+    optionItem.classList.add("input-text");
 
-const categorySelect = document.getElementById("add-photo-form-categories");
+    categorySelect.appendChild(optionItem);
+}
+
+// Fonction d'initialisation du select
+function initializeCategorySelect () {
+    categories.forEach(createSelectCategories);
+}
+initializeCategorySelect();
 
 // Fonction de vérification que tous les champs du formaulaire sont remplis
 
 function areAllFormFieldsFilled () {
-
+ 
     const fields = document.querySelectorAll(".modal2__form-element");
 
     const allFilled = Array.from(fields).every(field => {
@@ -165,7 +179,6 @@ formFields.forEach(field => {
 })
 
 // Fonction pour activer ou désactiver le bouton d'envoi
-
 function toggleSubmitButton() {
 
     submitButton.disabled = !areAllFormFieldsFilled();
@@ -186,26 +199,6 @@ submitButton.addEventListener("submit", event => {
   // Initialisation lors du chargement de la page
   document.addEventListener('DOMContentLoaded', toggleSubmitButton);
 
-
-// Fermeture des modales
-const closeModal = function (event, element) {
-    event.preventDefault();
-    modal = document.querySelector(element.dataset.close);
-    modal.style.display = "none";
-
-    if (modal.id === "modal2") {
-        uploadingImgDiv.removeAttribute("style");
-        uploadedImg.src = "";
-        titleInput.value = "";
-        selectCategory.selectedIndex = 0;
-        errorMessage.removeAttribute("style");
-        uploadInstructions.removeAttribute("style");
-
-        if (submitButton) {
-            submitButton.disabled = true;
-        }
-    }
-}
 
 // Stop propagation
 const stopPropagation = function (element) {
@@ -262,4 +255,24 @@ const openModal = async function (event, element) {
     }
 
     deleteEvent();
+}
+
+// Fermeture des modales
+const closeModal = function (event, element) {
+    event.preventDefault();
+    modal = document.querySelector(element.dataset.close);
+    modal.style.display = "none";
+
+    if (modal.id === "modal2") {
+        uploadingImgDiv.removeAttribute("style");
+        uploadedImg.src = "";
+        titleInput.value = "";
+        selectCategory.selectedIndex = 0;
+        errorMessage.removeAttribute("style");
+        uploadInstructions.removeAttribute("style");
+
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+    }
 }

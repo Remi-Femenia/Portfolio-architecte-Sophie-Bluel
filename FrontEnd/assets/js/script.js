@@ -25,7 +25,7 @@ async function initializeCategoryFilters() {
     }
 }
 
-function createCategoryFilterButton(category) {
+function createCategoryFilterButton (category) {
     // Création de chaque élément dans des balises <li>
     const filterTitle = document.createElement("button");
     filterTitle.innerText = category.name;
@@ -42,7 +42,7 @@ function createCategoryFilterButton(category) {
     });
 }
 
-async function filterAndDisplayProjects(categoryName) {
+async function filterAndDisplayProjects (categoryName) {
     const works = await fetchWorks();
     const projectsFiltered = works.filter(work => work.category.name === categoryName);
 
