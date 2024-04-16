@@ -58,7 +58,7 @@ export const portfolioGallery = document.querySelector(".gallery");
 
 
 // Fonction pour ajouter un élément au portfolio
-export const addPortfolioItem = item => {
+export function addPortfolioItem (item) {
     const imageElement = document.createElement("img");
     imageElement.src = item.imageUrl;
   
