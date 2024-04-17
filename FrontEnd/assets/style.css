@@ -167,6 +167,7 @@ nav img {
 	padding: 0.6em 1.3em;
 	color: white;
 	cursor: default;
+	outline: none;
 }
 
 .categories__button:hover {
