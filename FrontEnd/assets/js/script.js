@@ -38,7 +38,13 @@ function createCategoryFilterButton (category) {
     filterSection.appendChild(buttonListContainer);
 
     // Interaction au clic avec le bouton
-    filterTitle.addEventListener("click", function() {
+    filterTitle.addEventListener("click", event => {
+        const allFilterButtons = document.querySelectorAll(".categories__button");
+        allFilterButtons.forEach( filterButton => {
+            filterButton.classList.remove("categories__button--active");
+        });
+        const clickedButton = event.target;
+        clickedButton.classList.add("categories__button--active");
         filterAndDisplayProjects(category.name);
     });
 }

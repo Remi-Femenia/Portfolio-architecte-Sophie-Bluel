@@ -162,7 +162,7 @@ nav img {
 	background-color: #FFFFFF;
 }
 
-.categories__button:focus {
+.categories__button--active {
 	background-color: #1D6154;
 	padding: 0.6em 1.3em;
 	color: white;
