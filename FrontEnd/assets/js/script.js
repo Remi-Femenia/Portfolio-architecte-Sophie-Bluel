@@ -16,6 +16,24 @@ import {
 
 ////////////////////////// FILTRES PORTFOLIO /////////////////////////////
 
+// Fonction d'initialization du bouton "Tous"
+function initializeAllCategoriesBtn () {
+    const allCategoriesBtn = document.getElementById("all-categories-btn");
+    allCategoriesBtn.addEventListener("click", function() {
+        if (!this.classList.contains("categories__button--active")) {
+            // Retire la classe de sélection des boutons à tous les boutons
+            const allFilterButtons = document.querySelectorAll(".categories__button");           
+            allFilterButtons.forEach( filterButton => {
+                filterButton.classList.remove("categories__button--active");
+            });
+
+            this.classList.add("categories__button--active"); // Ajoute la classe de sélection au bouton "Tous"
+            portfolioGallery.innerHTML = ""; // Nettoie la galerie
+            initializePortfolio(); // Ré-affiche tous les projets
+        }
+    });
+}
+
 // Fonction servant à créer les boutons de filtre
 async function initializeCategoryFilters() {
     try {
@@ -125,14 +143,8 @@ function initializeWebsite() {
     initializePortfolio();
     // Autres initialisations nécessaires...
 
-    const allCategoriesButton = document.getElementById("all-categories-btn");
-    allCategoriesButton.focus();
-    allCategoriesButton.addEventListener("click", function() {
-        portfolioGallery.innerHTML = ""; // Nettoie la galerie
-        initializePortfolio(); // Ré-affiche tous les projets
-    });
-
-}
+    initializeAllCategoriesBtn();
+};
 
 // 4. Configuration des Écouteurs d'Événements
 document.addEventListener('DOMContentLoaded', initializeWebsite());
