@@ -19,6 +19,7 @@ import {
 // Fonction servant à créer les boutons de filtre
 async function initializeCategoryFilters() {
     try {
+        const categories = await fetchCategories();
         categories.forEach(createCategoryFilterButton);
     } catch (error) {
         console.error("Erreur lors de la récupération des catégories:", error);
