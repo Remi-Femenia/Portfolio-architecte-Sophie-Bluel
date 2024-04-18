@@ -1,5 +1,5 @@
 import {
-    fetchWorks, fetchCategories, worksCache, categoriesCache, works, categories,
+    fetchWorks, fetchCategories, worksCache, categoriesCache,
     editModeBanner, loginButton, logoutButton, openEditModalButton, categoryFilters,
     enableEditMode, disableEditMode, portfolioGallery, addPortfolioItem, initializePortfolio
 } from "./utils.js";

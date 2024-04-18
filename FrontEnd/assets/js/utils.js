@@ -43,9 +43,6 @@ export async function fetchCategories() {
 
 //////////////////////////// GLOBALES /////////////////////////////////
 
-export const works = await fetchWorks();
-export const categories = await fetchCategories();
-
 
 ///////////////////////////// INDEX ///////////////////////////////////
 

@@ -1,4 +1,4 @@
-import { fetchWorks, fetchCategories, worksCache, categoriesCache, works, categories, initializePortfolio } from "./utils.js";
+import { fetchWorks, fetchCategories, worksCache, categoriesCache, initializePortfolio } from "./utils.js";
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////////// GLOBAL ////////////////////////////////
@@ -135,7 +135,8 @@ function createSelectCategories (category) {
 }
 
 // Fonction d'initialisation du select
-function initializeCategorySelect () {
+async function initializeCategorySelect () {
+    const categories = await fetchCategories();
     categories.forEach(createSelectCategories);
 }
 initializeCategorySelect();
@@ -237,6 +238,11 @@ window.addEventListener('keydown', function (e) {
 
 //////////////////// FONCTIONS GENERALES DES MODALES //////////////////
 
+async function initializeModalGallery () {
+    const works = await fetchWorks();
+    works.forEach(createWorkGalleryModal);
+}
+
 // Fonction d'ouverture des modales
 const openModal = async function (event, element) {
 
@@ -251,7 +257,7 @@ const openModal = async function (event, element) {
     }*/
 
     if (modal.id === "modal1") {
-        works.forEach(createWorkGalleryModal);
+        initializeModalGallery();
     }
 
     deleteEvent();
