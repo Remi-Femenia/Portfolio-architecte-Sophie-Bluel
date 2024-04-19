@@ -1,7 +1,10 @@
+import { isValidEmail, isValidPassword, enableEditMode, disableEditMode } from "./utils.js";
+
 // Utiliser .trim() pour nettoyer le champ de saisie
 
 const loginForm = document.getElementById("loginForm");
 
+// Fonction d'authentification de l'utilisateur
 async function loginUser (email, password) {
 
     const fetchLogin = await fetch("http://localhost:5678/api/users/login", {
@@ -17,7 +20,7 @@ async function loginUser (email, password) {
         window.localStorage.setItem("token", loginResponse.token);
 
         window.location.href="index.html";
-
+        enableEditMode();
     }
     else {
         const loginError = document.getElementById("login-error");
@@ -34,12 +37,14 @@ async function loginUser (email, password) {
     }
 }
 
-loginForm.addEventListener("submit", async event => {
+function sendCredentialsForVerification () {
+    loginForm.addEventListener("submit", async event => {
+        event.preventDefault();
+        const userEmail = document.getElementById("loginEmail").value;
+        const userPassword = document.getElementById("loginPassword").value;
 
-    event.preventDefault();
-
-    const userEmail = document.getElementById("loginEmail").value;
-    const userPassword = document.getElementById("loginPassword").value;
-
-    loginUser(userEmail, userPassword);
-})
+        if (isValidEmail(userEmail) && isValidPassword(userPassword)) {
+            loginUser(userEmail, userPassword);
+        }
+    })
+}

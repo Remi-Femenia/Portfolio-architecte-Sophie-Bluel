@@ -77,6 +77,8 @@ async function filterAndDisplayProjects (categoryName) {
     projectsFiltered.forEach(addPortfolioItem);
 }
 
+
+
 ///////////////////////// Ancienne version
 
 /**fetchCategories().then(categories => {

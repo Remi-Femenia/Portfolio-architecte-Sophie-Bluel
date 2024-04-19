@@ -28,7 +28,7 @@ export async function fetchCategories() {
     if (categoriesCache !== null) {
         return categoriesCache;
     }
-  
+
     const response = await fetch("http://localhost:5678/api/categories");
     const data = await response.json(); // Convertit les données JSON en objets/arrays JavaScript
     categoriesCache = data; // Cache les données converties
@@ -53,7 +53,6 @@ export const portfolioGallery = document.querySelector(".gallery");
 //////////////////////////// FONCTIONS ////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-
 // Fonction pour ajouter un élément au portfolio
 export function addPortfolioItem (item) {
     const imageElement = document.createElement("img");
@@ -65,6 +64,14 @@ export function addPortfolioItem (item) {
     const cardElement = document.createElement("figure");
     cardElement.append(imageElement, titleElement); // Utilise append pour ajouter plusieurs éléments
     portfolioGallery.appendChild(cardElement);
+}
+
+export function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+export function isValidPassword(password) {
+    return password.length > 0;
 }
 
 
