@@ -110,6 +110,10 @@ li:hover {
 	color: #B1663C;
 }
 
+.nav_logout-button {
+	display: none;
+}
+
 nav img {
 	height: 22px;
 	vertical-align: middle;
@@ -140,6 +144,10 @@ nav img {
 }
 #portfolio h2 {
 	text-align: center;
+}
+
+#openEditModalButton {
+	display: none;
 }
 
 .categories {

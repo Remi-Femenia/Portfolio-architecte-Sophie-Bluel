@@ -66,7 +66,13 @@ export function addPortfolioItem (item) {
     portfolioGallery.appendChild(cardElement);
 }
 
+export function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
 
+export function isValidPassword(password) {
+    return password.length > 0;
+}
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -89,18 +95,22 @@ export function disableEditMode () {
     categoryFilters.removeAttribute("style");
 }
 
+function initializeLogoutProcess () {
+    logoutButton.addEventListener("click", event => {
+        disableEditMode();
+        localStorage.removeItem("userId");
+        localStorage.removeItem("token");
+    })
+}
+
 // Fonction d'affichage du mode édition
 export function enableEditMode () {
     editModeBanner.style.display = "flex";
     loginButton.style.display = "none";
     openEditModalButton.style.display = "block";
     categoryFilters.style.display = "none";
-
     logoutButton.style.display = "list-item";
-    logoutButton.addEventListener("click", event => {
-        disableEditMode();
-
-    })
+    initializeLogoutProcess();
 }
 
 ///////////////////////////////////////////////////////////////////////

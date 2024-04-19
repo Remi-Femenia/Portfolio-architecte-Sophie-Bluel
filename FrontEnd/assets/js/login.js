@@ -16,10 +16,10 @@ async function loginUser (email, password) {
     if (fetchLogin.ok) {
         let loginResponse = await fetchLogin.json();
 
-        window.localStorage.setItem("id", loginResponse.userId);
-        window.localStorage.setItem("token", loginResponse.token);
+        localStorage.setItem("id", loginResponse.userId);
+        localStorage.setItem("token", loginResponse.token);
 
-        window.location.href="index.html";
+        location.href="index.html";
         enableEditMode();
     }
     else {
@@ -37,8 +37,8 @@ async function loginUser (email, password) {
     }
 }
 
-function sendCredentialsForVerification () {
-    loginForm.addEventListener("submit", async event => {
+export function sendCredentialsForVerification () {
+    loginForm.addEventListener("submit", event => {
         event.preventDefault();
         const userEmail = document.getElementById("loginEmail").value;
         const userPassword = document.getElementById("loginPassword").value;
@@ -47,4 +47,5 @@ function sendCredentialsForVerification () {
             loginUser(userEmail, userPassword);
         }
     })
-}
+};
+sendCredentialsForVerification();
