@@ -66,13 +66,7 @@ export function addPortfolioItem (item) {
     portfolioGallery.appendChild(cardElement);
 }
 
-export function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-}
 
-export function isValidPassword(password) {
-    return password.length > 0;
-}
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -86,15 +80,6 @@ export const logoutButton = document.getElementById("logoutButton");
 export const openEditModalButton = document.getElementById("openEditModalButton");
 export const categoryFilters = document.getElementById("categories");
 
-// Fonction d'affichage du mode édition
-export function enableEditMode () {
-    editModeBanner.style.display = "flex";
-    loginButton.style.display = "none";
-    logoutButton.style.display = "list-item";
-    openEditModalButton.style.display = "block";
-    categoryFilters.style.display = "none";
-}
-
 //Fonction de masquage du mode édition
 export function disableEditMode () {
     editModeBanner.removeAttribute("style");
@@ -104,6 +89,19 @@ export function disableEditMode () {
     categoryFilters.removeAttribute("style");
 }
 
+// Fonction d'affichage du mode édition
+export function enableEditMode () {
+    editModeBanner.style.display = "flex";
+    loginButton.style.display = "none";
+    openEditModalButton.style.display = "block";
+    categoryFilters.style.display = "none";
+
+    logoutButton.style.display = "list-item";
+    logoutButton.addEventListener("click", event => {
+        disableEditMode();
+
+    })
+}
 
 ///////////////////////////////////////////////////////////////////////
 ////////////////////////// INITIALISATIONS ////////////////////////////
