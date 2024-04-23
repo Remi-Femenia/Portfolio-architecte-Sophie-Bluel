@@ -297,7 +297,7 @@ footer nav ul {
 ***********************************/
 
 .editor-banner {
-	display: flex;
+	display: none;
 	justify-content: center;
 	gap: 0.5em;
 	background: #000;
