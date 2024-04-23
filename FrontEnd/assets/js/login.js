@@ -40,8 +40,8 @@ async function loginUser (email, password) {
 export function sendCredentialsForVerification () {
     loginForm.addEventListener("submit", event => {
         event.preventDefault();
-        const userEmail = document.getElementById("loginEmail").value;
-        const userPassword = document.getElementById("loginPassword").value;
+        const userEmail = document.getElementById("loginEmail").value.trim();
+        const userPassword = document.getElementById("loginPassword").value.trim();
 
         if (isValidEmail(userEmail) && isValidPassword(userPassword)) {
             loginUser(userEmail, userPassword);
