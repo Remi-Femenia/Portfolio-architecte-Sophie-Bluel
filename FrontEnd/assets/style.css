@@ -147,7 +147,7 @@ nav img {
 }
 
 #openEditModalButton {
-	display: none;
+	display: flex;
 }
 
 .categories {
